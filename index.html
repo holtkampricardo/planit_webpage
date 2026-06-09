@@ -1,523 +1,685 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- ===== SEO BASICS ===== -->
-    <title>Planit – App to organize plans with friends</title>
-    <meta name="description" content="Planit is the easiest way to create and organize plans with friends. Schedule events, split costs, vote on activities and get reminders. Coming soon on iOS & Android.">
-    <meta name="keywords" content="Planit, Planit app, organize plans, friends, events, activities, social app, iOS, Android">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.getplanit.app/">
-    
-    <!-- ===== Open Graph (social previews) ===== -->
-    <meta property="og:title" content="Planit – App to organize plans with friends">
-    <meta property="og:description" content="Planit helps you easily create, share, and organize plans with friends. Coming soon on iOS & Android.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.getplanit.app/">
-    <meta property="og:image" content="https://www.getplanit.app/assets/logo.png">
-    
-    <!-- ===== Twitter Card ===== -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Planit – App to organize plans with friends">
-    <meta name="twitter:description" content="Planit helps you easily create, share, and organize plans with friends. Coming soon on iOS & Android.">
-    <meta name="twitter:image" content="https://www.getplanit.app/assets/logo.png">
-    <meta name="twitter:site" content="@getplanit">
-    
-    <!-- ===== Theme / favicon / icons ===== -->
-    <link rel="icon" type="image/png" sizes="48x48" href="/assets/logo_webpage_icon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/logo_webpage_icon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo_webpage_icon.png">
-    <meta name="theme-color" content="#FF033E">
-
-    <!-- ===== Fonts / CSS / Tailwind ===== -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/index.css">
-
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; color: #1a1a1a; }
-        .bg-brand { background-color: #FF033E; }
-        .text-brand { color: #FF033E; }
-        .border-brand { border-color: #FF033E; }
-        .btn-brand { background-color: #FF033E; color: white; transition: all 0.3s ease; box-shadow: 0 4px 15px -5px rgba(255, 3, 62, 0.6); }
-        .btn-brand:hover { transform: translateY(-3px); box-shadow: 0 7px 20px -5px rgba(255, 3, 62, 0.8); }
-        .hero-section { position: relative; overflow: hidden; }
-        #particle-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
-        .hero-content { position: relative; z-index: 1; }
-        .feature-card { transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; border: 2px solid transparent; }
-        .feature-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px -15px rgba(0,0,0,0.15); border-color: rgba(255, 3, 62, 0.5); }
-        .parallax-container { perspective: 1000px; position: relative; width: 100%; height: 450px; }
-        .parallax-item { position: absolute; border-radius: 12px; background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94); overflow: hidden; border: 1px solid #e5e7eb; }
-        .modal-link { cursor: pointer; text-decoration: underline; }
-        .modal-link:hover { color: #FF033E; }
-        #cookie-banner { box-shadow: 0 -4px 24px rgba(0,0,0,0.08); }
-    </style>
-    <!-- ===== Structured data: MobileApplication + Organization (helps Google show logo & app info) ===== -->
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "MobileApplication",
-            "name": "Planit",
-            "url": "https://www.getplanit.app/",
-            "description": "Planit is the easiest way to create and organize plans with friends. Schedule events, split costs, vote on activities and get reminders.",
-            "applicationCategory": "SocialNetworking",
-            "operatingSystem": "iOS, Android",
-            "image": "https://www.getplanit.app/assets/logo.png",
-            "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planit — App para organizar planes con amigos | getplanit.app</title>
+  <meta name="description" content="Planit es la app para crear y organizar planes con amigos: viajes, cenas, fiestas. Vota opciones, divide gastos y recibe recordatorios. Próximamente en iOS y Android.">
+  <meta name="keywords" content="Planit, getplanit, planit app, getplanit.app, organizar planes, planes con amigos, app eventos, dividir gastos, votaciones grupo, app iOS, app Android">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Buildit Labs">
+  <meta name="application-name" content="Planit">
+  <meta name="apple-mobile-web-app-title" content="Planit">
+  <link rel="canonical" href="https://www.getplanit.app/">
+  <link rel="manifest" href="./manifest.json">
+  <meta property="og:site_name" content="Planit">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:title" content="Planit — Organiza planes con amigos">
+  <meta property="og:description" content="Planit te ayuda a coordinar viajes, cenas y eventos con amigos. Vota, divide gastos y no te pierdas nada. App en desarrollo para iOS y Android.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.getplanit.app/">
+  <meta property="og:image" content="https://www.getplanit.app/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="800">
+  <meta property="og:image:alt" content="Planit — app para organizar planes con amigos">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@getplanit">
+  <meta name="twitter:title" content="Planit — Organiza planes con amigos">
+  <meta name="twitter:description" content="Coordina viajes, cenas y fiestas con amigos. Vota, divide gastos y recibe recordatorios. Próximamente en iOS y Android.">
+  <meta name="twitter:image" content="https://www.getplanit.app/assets/og-image.jpg">
+  <meta name="twitter:image:alt" content="Planit — app para organizar planes con amigos">
+  <meta name="theme-color" content="#09080a">
+  <link rel="icon" type="image/png" sizes="48x48" href="./assets/icon-48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="./assets/icon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="./assets/icon.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="./assets/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;600;700&family=Syne:wght@700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;600;700&family=Syne:wght@700&display=swap"></noscript>
+  <link rel="stylesheet" href="./index.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://www.getplanit.app/#website",
+        "url": "https://www.getplanit.app/",
+        "name": "Planit",
+        "alternateName": ["getplanit", "Planit app", "getplanit.app", "planit"],
+        "description": "Planit — app para crear y organizar planes con amigos: viajes, eventos, votaciones y gastos compartidos.",
+        "inLanguage": ["es", "en"],
+        "publisher": { "@id": "https://www.getplanit.app/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://www.getplanit.app/#organization",
+        "name": "Planit",
+        "legalName": "Buildit Labs",
+        "url": "https://www.getplanit.app/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.getplanit.app/assets/logo.png",
+          "width": 713,
+          "height": 281
+        },
+        "sameAs": [
+          "https://www.instagram.com/getplanit/",
+          "https://www.tiktok.com/@getplanit"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "aplicacionplanit@gmail.com",
+          "contactType": "customer support",
+          "availableLanguage": ["Spanish", "English"]
+        }
+      },
+      {
+        "@type": "MobileApplication",
+        "@id": "https://www.getplanit.app/#app",
+        "name": "Planit",
+        "alternateName": "getplanit",
+        "url": "https://www.getplanit.app/",
+        "description": "Planit es la app para organizar planes con amigos: crea eventos, vota opciones, divide gastos y recibe recordatorios.",
+        "applicationCategory": "SocialNetworkingApplication",
+        "operatingSystem": "iOS, Android",
+        "image": "https://www.getplanit.app/assets/logo.png",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+        "author": { "@id": "https://www.getplanit.app/#organization" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.getplanit.app/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Planit es gratis?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. Planit será gratuito en su lanzamiento. Apúntate a la lista de espera y te avisaremos cuando esté disponible."
             }
-        }
-    </script>
-        
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Planit",
-            "url": "https://www.getplanit.app/",
-            "logo": "https://www.getplanit.app/assets/logo.png",
-            "sameAs": [
-            "https://www.instagram.com/getplanit/",
-            "https://www.tiktok.com/@getplanit"
-            ]
-        }
-    </script>  
+          },
+          {
+            "@type": "Question",
+            "name": "¿Para qué sirve Planit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Para crear y organizar planes con amigos: viajes, cenas, fiestas y eventos. Puedes votar opciones, dividir gastos y recibir recordatorios."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuándo estará disponible Planit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Planit se está preparando para el lanzamiento en la App Store y Google Play. Apúntate a la lista y te avisaremos cuando esté listo."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué datos recoge la web de Planit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Solo tu email si te apuntas a la lista de espera. No vendemos tus datos. Consulta la Política de Privacidad en getplanit.app."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
-<body class="antialiased">
+<body>
+<div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
-<!-- Header -->
-<header class="py-6 px-4 sm:px-6 lg:px-8 bg-white/80 backdrop-blur-sm sticky top-0 z-40">
-    <div class="container mx-auto flex justify-between items-center">
-        <img src="./assets/logo.png" alt="Planit Logo" class="h-10">
-        <a href="#cta" class="btn-brand font-semibold py-2 px-5 rounded-full" data-lang="notify-me">Get Notified</a>
+<header id="site-header" class="site-header">
+  <div class="header-shell">
+    <a href="./" class="site-logo-link" aria-label="Planit — inicio">
+      <img src="./assets/logo.png" alt="Planit — app para organizar planes con amigos" class="site-logo" width="200" height="79">
+    </a>
+    <nav class="header-nav" aria-label="Principal">
+      <a href="#features" data-lang="nav-features">Funciones</a>
+      <a href="#process" data-lang="nav-process">Cómo funciona</a>
+      <a href="#compare" data-lang="nav-compare">Por qué</a>
+      <a href="#faq" data-lang="nav-faq">FAQ</a>
+      <a href="./privacidad.html" data-lang="nav-privacy">Privacidad</a>
+    </nav>
+    <div class="header-actions">
+      <a href="#cta" class="btn-primary btn-sm" data-lang="notify-me">Avísame</a>
+      <button type="button" id="mobile-nav-toggle" class="mobile-nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menú">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Navegación móvil">
+      <a href="#features" data-lang="nav-features">Funciones</a>
+      <a href="#process" data-lang="nav-process">Cómo funciona</a>
+      <a href="#compare" data-lang="nav-compare">Por qué</a>
+      <a href="#faq" data-lang="nav-faq">FAQ</a>
+      <a href="./privacidad.html" data-lang="nav-privacy">Privacidad</a>
+      <a href="#cta" data-lang="notify-me">Avísame</a>
+    </nav>
+  </div>
 </header>
 
-<!-- Hero Section -->
-<section class="hero-section bg-white text-center py-24 sm:py-32 lg:py-40 px-4">
-    <canvas id="particle-canvas"></canvas>
-    <div class="hero-content container mx-auto">
-        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black mb-4 leading-tight" data-lang="hero-title">Organize plans with friends<br class="hidden md:block">in a fun and easy way!</h1>
-        <p class="text-lg sm:text-xl lg:text-2xl text-gray-500 mb-8 max-w-3xl mx-auto" data-lang="hero-subtitle">Coming soon to iOS & Android</p>
-        <a href="#cta" class="btn-brand text-lg font-bold py-4 px-10 rounded-full w-full sm:w-auto text-center block" data-lang="notify-me-cta">Notify me when it's available</a>
+<main>
+  <section class="hero" id="top">
+    <div class="hero-aurora" aria-hidden="true"></div>
+    <div class="hero-gridlines" aria-hidden="true"></div>
+    <div class="hero-beams" aria-hidden="true">
+      <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" fill="none">
+        <path class="beam beam-1" d="M-80 120 C280 80, 520 200, 900 60 S1300 180, 1280 40" stroke="url(#beam-grad)" stroke-width="1.2"/>
+        <path class="beam beam-2" d="M-60 420 C320 380, 580 520, 940 400 S1260 500, 1300 360" stroke="url(#beam-grad)" stroke-width="1"/>
+        <path class="beam beam-3" d="M100 680 C400 620, 700 740, 1100 660" stroke="url(#beam-grad)" stroke-width="0.8"/>
+        <defs>
+          <linearGradient id="beam-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="rgba(255,3,62,0)"/>
+            <stop offset="40%" stop-color="rgba(255,3,62,0.35)"/>
+            <stop offset="100%" stop-color="rgba(255,111,145,0)"/>
+          </linearGradient>
+        </defs>
+      </svg>
     </div>
-</section>
+    <div class="hero-spotlight" id="hero-spotlight" aria-hidden="true"></div>
 
-<!-- Features Section -->
-<section id="features" class="py-20 sm:py-24 bg-gray-50">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold" data-lang="features-title">What can you do with Planit?</h2>
-            <p class="text-lg text-gray-500 mt-4 max-w-2xl mx-auto" data-lang="features-subtitle">Everything you need to turn ideas into incredible experiences.</p>
+    <div class="container hero-layout">
+      <div class="hero-copy">
+        <div class="hero-badge reveal">
+          <span class="hero-badge-pulse" aria-hidden="true"></span>
+          <span data-lang="hero-badge">Planit · Planificación social</span>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <!-- Feature 1 -->
-            <div class="feature-card bg-white p-8 rounded-2xl text-center">
-                <div class="mb-4 inline-block p-4 bg-red-50 rounded-xl">
-                    <svg class="h-8 w-8 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg>
-                </div>
-                <h3 class="text-xl font-bold mb-2" data-lang="feature1-title">Create plans and sub-plans</h3>
-                <p class="text-gray-500" data-lang="feature1-desc">Organize every detail, from the main event to the smallest tasks.</p>
-            </div>
-            <!-- Feature 2 -->
-            <div class="feature-card bg-white p-8 rounded-2xl text-center">
-                <div class="mb-4 inline-block p-4 bg-red-50 rounded-xl">
-                    <svg class="h-8 w-8 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
-                </div>
-                <h3 class="text-xl font-bold mb-2" data-lang="feature2-title">Propose & split costs</h3>
-                <p class="text-gray-500" data-lang="feature2-desc">Suggest activities and manage expenses transparently and fairly.</p>
-            </div>
-            <!-- Feature 3 -->
-            <div class="feature-card bg-white p-8 rounded-2xl text-center">
-                <div class="mb-4 inline-block p-4 bg-red-50 rounded-xl">
-                    <svg class="h-8 w-8 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-                </div>
-                <h3 class="text-xl font-bold mb-2" data-lang="feature3-title">Vote on everything</h3>
-                <p class="text-gray-500" data-lang="feature3-desc">Let the group decide on dates, locations, and activities democratically.</p>
-            </div>
-            <!-- Feature 4 -->
-            <div class="feature-card bg-white p-8 rounded-2xl text-center">
-                <div class="mb-4 inline-block p-4 bg-red-50 rounded-xl">
-                    <svg class="h-8 w-8 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>
-                </div>
-                <h3 class="text-xl font-bold mb-2" data-lang="feature4-title">Notifications & Reminders</h3>
-                <p class="text-gray-500" data-lang="feature4-desc">Stay updated on all plan activities and never miss a deadline.</p>
-            </div>
+
+        <h1 class="hero-title" id="hero-title" data-lang-words="hero-title">Organiza planes con amigos de forma fácil y divertida</h1>
+
+        <p class="hero-subtitle reveal reveal-delay-1">
+          <span data-lang="hero-subtitle-prefix">Coordina</span>
+          <span class="rotating-wrap" aria-live="polite"><span id="rotating-word" class="rotating-word">viajes</span></span><span data-lang="hero-subtitle-suffix"> sin caos en el grupo. Vota, divide gastos y no te pierdas nada.</span>
+        </p>
+
+        <div class="hero-actions reveal reveal-delay-2">
+          <a href="#cta" class="btn-primary btn-shimmer" data-lang="notify-me-cta">Avísame cuando esté disponible</a>
+          <a href="#features" class="btn-ghost" data-lang="hero-explore">Explorar funciones</a>
         </div>
+
+        <div class="hero-meta reveal reveal-delay-3">
+          <span class="meta-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+            <span data-lang="hero-coming">Próximamente en iOS y Android</span>
+          </span>
+          <span class="meta-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            <span data-lang="hero-vote">Votaciones en grupo</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="hero-device reveal reveal-delay-2" aria-hidden="true">
+        <div class="phone-orbit"></div>
+        <div class="device-glow"></div>
+        <div class="floating-card floating-card--a">
+          <span data-lang="float-plan">Viaje a la playa</span>
+          <strong data-lang="float-votes">7 votos</strong>
+        </div>
+        <div class="floating-card floating-card--b">
+          <span data-lang="ui-cost">Gastos compartidos</span>
+          <strong>€124</strong>
+        </div>
+        <div class="phone-frame" id="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-ui">
+              <div class="ui-header">
+                <span>Planit</span>
+                <span>2026</span>
+              </div>
+              <div class="ui-balance">
+                <div class="ui-balance-label" data-lang="ui-plan">Plan activo</div>
+                <div class="ui-balance-value"><span id="balance-counter" data-count="8">0</span> <span style="font-size:0.55em;font-weight:600">amigos</span></div>
+                <div class="ui-balance-delta">Viaje playa · confirmado</div>
+              </div>
+              <div class="ui-goal">
+                <div class="ui-goal-top">
+                  <span data-lang="ui-vote">¿Mejores fechas?</span>
+                  <span>7/8</span>
+                </div>
+                <div class="ui-progress"><span style="width:87%"></span></div>
+              </div>
+              <div class="ui-chart-line">
+                <svg viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="chart-fill" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="rgba(255,3,62,0.35)"/>
+                      <stop offset="100%" stop-color="rgba(255,3,62,0)"/>
+                    </linearGradient>
+                    <linearGradient id="beam-grad-phone" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#ff033e"/>
+                      <stop offset="100%" stop-color="#ff6f91"/>
+                    </linearGradient>
+                  </defs>
+                  <path class="chart-area" d="M0,45 L40,40 L80,35 L120,28 L160,22 L200,18 L200,60 L0,60 Z" fill="url(#chart-fill)"/>
+                  <path class="chart-stroke" d="M0,45 L40,40 L80,35 L120,28 L160,22 L200,18" fill="none" stroke="url(#beam-grad-phone)" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- App Mockup / Showcase Section -->
-<section class="py-20 sm:py-32 bg-white overflow-hidden">
-    <div class="container mx-auto px-4">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-            <div class="text-center lg:text-left">
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4" data-lang="showcase-title">We are building something amazing!</h2>
-                <p class="text-lg text-gray-500" data-lang="showcase-desc">We're working hard to launch Planit very soon on iOS and Android. Take a sneak peek at what's coming. The future of social planning is almost here.</p>
-            </div>
-            <div class="parallax-container" id="parallax-scene">
-                <!-- UI Elements for Parallax -->
-                <div class="parallax-item" style="width: 280px; top: 10%; left: 30%; transform: translateZ(20px);">
-                     <div class="p-4">
-                        <h3 class="font-bold">Summer Beach Trip 🌴</h3>
-                        <div class="flex items-center mt-2">
-                            <span class="text-sm bg-green-100 text-green-800 px-2 py-1 rounded-full">Confirmed</span>
-                        </div>
-                    </div>
-                </div>
-                 <div class="parallax-item p-4" style="width: 200px; top: 55%; left: 10%; transform: translateZ(60px);">
-                    <p class="font-semibold">Best dates?</p>
-                    <div class="space-y-2 mt-2">
-                       <div class="flex items-center justify-between text-sm"><p>July 15-20</p> <span class="font-bold text-brand">7 votes</span></div>
-                       <div class="w-full bg-gray-200 rounded-full h-2"><div class="bg-brand h-2 rounded-full" style="width: 70%"></div></div>
-                    </div>
-                </div>
-                <div class="parallax-item flex items-center p-3" style="width: 180px; top: 15%; left: -5%; transform: translateZ(80px);">
-                    <img src="https://i.pravatar.cc/40?u=a" alt="avatar" class="w-10 h-10 rounded-full mr-3">
-                    <div>
-                        <p class="font-semibold">Alex (You)</p>
-                        <p class="text-xs text-gray-500">Organizer</p>
-                    </div>
-                </div>
-                <div class="parallax-item" style="width: 250px; top: 60%; left: 65%; transform: translateZ(40px);">
-                    <div class="bg-brand text-white p-3 font-bold">New Plan</div>
-                    <div class="p-4">
-                        <p class="text-sm font-semibold">Plan Title</p>
-                        <div class="w-full border rounded-lg p-2 mt-1 text-gray-400">e.g., Mountain hike</div>
-                    </div>
-                </div>
-                 <div class="parallax-item flex items-center p-3" style="width: 150px; top: 25%; left: 80%; transform: translateZ(100px);">
-                    <img src="https://i.pravatar.cc/40?u=b" alt="avatar" class="w-8 h-8 rounded-full -ml-2 border-2 border-white">
-                    <img src="https://i.pravatar.cc/40?u=c" alt="avatar" class="w-8 h-8 rounded-full -ml-2 border-2 border-white">
-                    <img src="https://i.pravatar.cc/40?u=d" alt="avatar" class="w-8 h-8 rounded-full -ml-2 border-2 border-white">
-                    <span class="text-sm ml-2 font-bold">+5</span>
-                </div>
-            </div>
+  <section class="marquee-section" aria-hidden="true">
+    <div class="marquee-row">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span class="marquee-item" data-lang="mq-1">Planes y subplanes</span>
+          <span class="marquee-item" data-lang="mq-2">Votaciones</span>
+          <span class="marquee-item" data-lang="mq-3">Dividir gastos</span>
+          <span class="marquee-item" data-lang="mq-4">Recordatorios</span>
+          <span class="marquee-item" data-lang="mq-5">Actividades</span>
+          <span class="marquee-item" data-lang="mq-6">Lista de espera abierta</span>
         </div>
+        <div class="marquee-group" aria-hidden="true">
+          <span class="marquee-item" data-lang="mq-1">Planes y subplanes</span>
+          <span class="marquee-item" data-lang="mq-2">Votaciones</span>
+          <span class="marquee-item" data-lang="mq-3">Dividir gastos</span>
+          <span class="marquee-item" data-lang="mq-4">Recordatorios</span>
+          <span class="marquee-item" data-lang="mq-5">Actividades</span>
+          <span class="marquee-item" data-lang="mq-6">Lista de espera abierta</span>
+        </div>
+      </div>
     </div>
-</section>
+    <div class="marquee-row marquee-row--reverse">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span class="marquee-item" data-lang="mq-7">Organizador</span>
+          <span class="marquee-item" data-lang="mq-8">Confirmaciones</span>
+          <span class="marquee-item" data-lang="mq-9">iOS y Android</span>
+          <span class="marquee-item" data-lang="mq-10">Sin spam</span>
+          <span class="marquee-item" data-lang="mq-11">Gratis al lanzar</span>
+          <span class="marquee-item" data-lang="mq-12">Con amigos</span>
+        </div>
+        <div class="marquee-group" aria-hidden="true">
+          <span class="marquee-item" data-lang="mq-7">Organizador</span>
+          <span class="marquee-item" data-lang="mq-8">Confirmaciones</span>
+          <span class="marquee-item" data-lang="mq-9">iOS y Android</span>
+          <span class="marquee-item" data-lang="mq-10">Sin spam</span>
+          <span class="marquee-item" data-lang="mq-11">Gratis al lanzar</span>
+          <span class="marquee-item" data-lang="mq-12">Con amigos</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- CTA Section -->
-<section id="cta" class="bg-gray-50">
-    <div class="container mx-auto py-20 sm:py-24 px-4 text-center">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-2" data-lang="cta-title">Want to be the first to try it?</h2>
-        <p class="text-gray-500 mb-8" data-lang="cta-subtitle">Join the waiting list to be notified when Planit launches.</p>
-        <form id="waitlist-form" action="https://formspree.io/f/xvgwrynw" method="POST" class="max-w-lg mx-auto">
+  <section class="principles-section" aria-label="Principios">
+    <div class="container principles-grid">
+      <div class="principle-pill reveal"><span class="principle-icon">◆</span><span data-lang="principle-1">Fácil de usar</span></div>
+      <div class="principle-pill reveal reveal-delay-1"><span class="principle-icon">◆</span><span data-lang="principle-2">Grupo al centro</span></div>
+      <div class="principle-pill reveal reveal-delay-2"><span class="principle-icon">◆</span><span data-lang="principle-3">Gastos justos</span></div>
+      <div class="principle-pill reveal reveal-delay-3"><span class="principle-icon">◆</span><span data-lang="principle-4">iOS y Android</span></div>
+    </div>
+  </section>
+
+  <section class="stats-section">
+    <div class="container stats-grid">
+      <article class="stat-card spotlight-card reveal">
+        <div class="stat-value"><span data-count="4">0</span></div>
+        <p class="stat-label" data-lang="stat-1">Todo en un solo sitio: fechas, lugares, tareas y gastos del plan.</p>
+      </article>
+      <article class="stat-card spotlight-card reveal reveal-delay-1">
+        <div class="stat-value"><span data-count="7">0</span><span class="suffix" data-lang="stat-2-suffix"> votos</span></div>
+        <p class="stat-label" data-lang="stat-2">El grupo decide fechas, actividades y opciones de forma democrática.</p>
+      </article>
+      <article class="stat-card spotlight-card reveal reveal-delay-2">
+        <div class="stat-value" data-lang="stat-3-value">iOS + Android</div>
+        <p class="stat-label" data-lang="stat-3">Lanzamiento en App Store y Google Play. Lista de espera abierta.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="process-section" id="process">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-label"><span data-lang="section-process">Cómo funciona</span></p>
+        <h2 data-lang="process-title">De la idea al plan, en tres pasos</h2>
+      </div>
+      <ol class="process-grid">
+        <li class="process-step spotlight-card reveal">
+          <span class="process-num">01</span>
+          <h3 data-lang="step-1-title">Crea el plan</h3>
+          <p data-lang="step-1-desc">Define el evento principal y añade subplanes: alojamiento, transporte, actividades y más.</p>
+        </li>
+        <li class="process-step spotlight-card reveal reveal-delay-1">
+          <span class="process-num">02</span>
+          <h3 data-lang="step-2-title">Invita y propón</h3>
+          <p data-lang="step-2-desc">Añade amigos, propone opciones y reparte costes de forma transparente.</p>
+        </li>
+        <li class="process-step spotlight-card reveal reveal-delay-2">
+          <span class="process-num">03</span>
+          <h3 data-lang="step-3-title">Vota y confirma</h3>
+          <p data-lang="step-3-desc">El grupo vota fechas y actividades. Recibe recordatorios y mantén todo al día.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="features" class="features-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-label"><span data-lang="section-features">Funciones</span></p>
+        <h2 data-lang="features-title">Todo lo que necesitas para planear con amigos</h2>
+        <p data-lang="features-subtitle">Sin hojas de cálculo ni chats interminables. Solo planes claros y divertidos.</p>
+      </div>
+
+      <div class="bento-grid">
+        <article class="bento-card bento-card--hero spotlight-card gradient-border reveal">
+          <div class="bento-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg>
+          </div>
+          <h3 data-lang="f1-title">Planes y subplanes</h3>
+          <p data-lang="f1-desc">Organiza cada detalle, del evento principal a las tareas más pequeñas.</p>
+          <div class="bento-mini-ui">
+            <div class="mini-chart" aria-hidden="true">
+              <span style="height:55%"></span><span style="height:72%"></span><span style="height:48%"></span>
+              <span style="height:88%"></span><span style="height:62%"></span><span style="height:95%"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="bento-card bento-card--tall spotlight-card reveal reveal-delay-1">
+          <div class="bento-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
+          </div>
+          <h3 data-lang="f2-title">Dividir gastos</h3>
+          <p data-lang="f2-desc">Propón actividades y gestiona los gastos de forma transparente y justa.</p>
+          <div class="bento-mini-ui mini-assets" aria-hidden="true">
+            <div class="asset-row"><span>Alojamiento</span><span>€320</span></div>
+            <div class="asset-row"><span>Transporte</span><span>€84</span></div>
+            <div class="asset-row"><span>Cena</span><span>€56</span></div>
+          </div>
+        </article>
+
+        <article class="bento-card bento-card--activos spotlight-card reveal">
+          <div class="bento-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <h3 data-lang="f3-title">Votaciones</h3>
+          <p data-lang="f3-desc">Deja que el grupo decida fechas, lugares y actividades democráticamente.</p>
+          <div class="bento-mini-ui mini-scenarios" aria-hidden="true">
+            <div class="mini-scenario"><span class="tag tag-opt">15–20 jul</span><span>7 votos</span></div>
+            <div class="mini-scenario"><span class="tag tag-base">22–28 jul</span><span>4 votos</span></div>
+            <div class="mini-scenario"><span class="tag tag-pes">Agosto</span><span>1 voto</span></div>
+          </div>
+        </article>
+
+        <article class="bento-card bento-card--metas spotlight-card reveal reveal-delay-1">
+          <div class="bento-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>
+          </div>
+          <h3 data-lang="f4-title">Notificaciones</h3>
+          <p data-lang="f4-desc">Recordatorios y avisos para que nadie se pierda un plazo ni una actualización.</p>
+          <div class="bento-mini-ui" aria-hidden="true">
+            <div class="mini-goal-row"><span>Voto cierra hoy</span><span>18:00</span></div>
+            <div class="ui-progress" style="margin-top:0.35rem"><span style="width:72%"></span></div>
+          </div>
+        </article>
+
+        <article class="bento-card bento-card--coach spotlight-card reveal">
+          <div class="bento-wide-inner">
+            <div>
+              <div class="bento-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v4"/><path d="m16.2 7.8 2.9-2.9"/><path d="M18 12h4"/><path d="m16.2 16.2 2.9 2.9"/><path d="M12 18v4"/><path d="m4.9 19.1 2.9-2.9"/><path d="M2 12h4"/><path d="m4.9 4.9 2.9 2.9"/></svg>
+              </div>
+              <h3 data-lang="f5-title">Actividades</h3>
+              <p data-lang="f5-desc">Sugiere ideas y deja que el grupo elija qué hacer en cada momento.</p>
+            </div>
+            <div class="bento-mini-ui mini-chat" aria-hidden="true">
+              <div class="chat-bubble chat-user">¿Cena o barbacoa?</div>
+              <div class="chat-bubble chat-ai">Barbacoa lidera con 5 votos</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="bento-card bento-card--privacy spotlight-card reveal reveal-delay-1">
+          <div class="bento-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 data-lang="f6-title">Grupo conectado</h3>
+          <p data-lang="f6-desc">Todos ven el mismo plan, las votaciones y el estado de cada tarea.</p>
+          <div class="privacy-badge" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span data-lang="group-badge">En vivo</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="compare" class="compare-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-label"><span data-lang="section-compare">Por qué Planit</span></p>
+        <h2 data-lang="compare-title">Deja el caos del grupo atrás</h2>
+        <p data-lang="compare-subtitle">Arrastra el control para ver la diferencia entre un chat de grupo y Planit.</p>
+      </div>
+
+      <div class="compare-wrap reveal" id="compare-wrap" tabindex="0" role="slider" aria-valuemin="8" aria-valuemax="92" aria-valuenow="50" aria-label="Comparar chat grupal y Planit">
+        <div class="compare-layer compare-excel" aria-hidden="true">
+          <div class="chat-mock">
+            <div class="chat-mock-header">Grupo: Viaje playa 🏖️</div>
+            <div class="chat-msg chat-msg--other">Ana: ¿cuándo vamos?</div>
+            <div class="chat-msg chat-msg--other">Luis: no sé, mirad arriba</div>
+            <div class="chat-msg chat-msg--other">María: ???</div>
+            <div class="chat-msg chat-msg--self">Yo: ¿alguien tiene el Excel?</div>
+            <div class="chat-msg chat-msg--lost">… 47 mensajes después …</div>
+            <div class="chat-msg chat-msg--warn">Todo mezclado · fechas perdidas · gastos sin repartir</div>
+          </div>
+        </div>
+        <div class="compare-layer compare-app" id="compare-app-layer" aria-hidden="true">
+          <div class="compare-app-ui">
+            <div class="compare-app-header">
+              <span>Planit</span>
+              <span class="viz-pill" data-lang="viz-pill">Confirmado</span>
+            </div>
+            <p class="compare-app-label" data-lang="ui-plan">Plan activo</p>
+            <p class="compare-app-value">Viaje playa 2026</p>
+            <div class="compare-app-chart">
+              <svg viewBox="0 0 200 60" preserveAspectRatio="none"><path d="M0,50 L40,42 L80,35 L120,28 L160,18 L200,10" fill="none" stroke="url(#cmp-grad)" stroke-width="2.5"/><defs><linearGradient id="cmp-grad" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#ff033e"/><stop offset="1" stop-color="#ff6f91"/></linearGradient></defs></svg>
+            </div>
+            <div class="compare-app-scenarios">
+              <span class="tag tag-opt">15–20 jul · 7 votos</span>
+              <span class="tag tag-base">€124/persona</span>
+              <span class="tag tag-pes">8 confirmados</span>
+            </div>
+          </div>
+        </div>
+        <div class="compare-handle" id="compare-handle" aria-hidden="true">
+          <div class="compare-handle-line"></div>
+          <div class="compare-handle-knob">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4"/></svg>
+          </div>
+        </div>
+        <input type="range" class="compare-range" id="compare-range" min="8" max="92" value="50" aria-label="Comparar chat grupal y Planit" data-lang="compare-aria">
+        <span class="compare-label compare-label--left" data-lang="compare-left">Chat grupal</span>
+        <span class="compare-label compare-label--right" data-lang="compare-right">Planit</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="showcase" class="showcase-section">
+    <div class="container">
+      <div class="showcase-panel border-beam-wrap reveal">
+        <div class="showcase-layout">
+          <div class="showcase-copy">
+            <p class="section-label"><span data-lang="section-showcase">Vista previa</span></p>
+            <h2 class="showcase-title" data-lang="showcase-title">Preparando el lanzamiento</h2>
+            <p class="showcase-desc" data-lang="showcase-desc">Planit llegará pronto a iOS y Android. La forma más fácil de organizar planes con amigos.</p>
+            <ul class="showcase-perks">
+              <li data-lang="perk-1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Sin hojas de cálculo</li>
+              <li data-lang="perk-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Sin mensajes perdidos</li>
+              <li data-lang="perk-3"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Todo el grupo alineado</li>
+            </ul>
+          </div>
+          <div class="showcase-viz">
+            <div class="viz-header">
+              <span data-lang="viz-title">Viaje verano 2026</span>
+              <span class="viz-pill" data-lang="viz-pill">Confirmado</span>
+            </div>
+            <div class="scenario-viz" aria-hidden="true">
+              <div class="scenario-row">
+                <span class="tag-opt">Fechas</span>
+                <div class="scenario-bar"><span class="bar-opt-fill"></span></div>
+                <span data-lang="viz-horizon-val">15–20 jul</span>
+              </div>
+              <div class="scenario-row">
+                <span class="tag-base">Gastos</span>
+                <div class="scenario-bar"><span class="bar-base-fill"></span></div>
+                <span>€124/p</span>
+              </div>
+              <div class="scenario-row">
+                <span class="tag-pes">Grupo</span>
+                <div class="scenario-bar"><span class="bar-pes-fill"></span></div>
+                <span data-lang="viz-growth-val">8 amigos</span>
+              </div>
+            </div>
+            <div class="viz-footer">
+              <div><span class="viz-label" data-lang="viz-growth">Participantes</span><strong data-lang="viz-growth-val">8 amigos</strong></div>
+              <div><span class="viz-label" data-lang="viz-horizon">Fechas</span><strong data-lang="viz-horizon-val">15–20 jul</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-label"><span data-lang="section-faq">Preguntas</span></p>
+        <h2 data-lang="faq-title">Lo que suele preguntarse</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item reveal">
+          <summary data-lang="faq-q1">¿Planit es gratis?</summary>
+          <p data-lang="faq-a1">Sí. Planit será gratuito en su lanzamiento. Apúntate a la lista y te avisaremos cuando esté disponible.</p>
+        </details>
+        <details class="faq-item reveal reveal-delay-1">
+          <summary data-lang="faq-q2">¿Para qué sirve Planit?</summary>
+          <p data-lang="faq-a2">Para crear y organizar planes con amigos: viajes, cenas, fiestas, eventos. Puedes votar opciones, dividir gastos y recibir recordatorios.</p>
+        </details>
+        <details class="faq-item reveal reveal-delay-2">
+          <summary data-lang="faq-q3">¿Cuándo estará disponible?</summary>
+          <p data-lang="faq-a3">Estamos preparando el lanzamiento en la App Store y Google Play. Apúntate a la lista y te avisaremos cuando Planit esté listo.</p>
+        </details>
+        <details class="faq-item reveal reveal-delay-3">
+          <summary data-lang="faq-q4">¿Qué datos recoge esta web?</summary>
+          <p data-lang="faq-a4">Solo tu email si te apuntas a la lista de espera. No vendemos tus datos. Consulta nuestra Política de Privacidad.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta" class="cta-section">
+    <div class="container">
+      <div class="cta-card border-beam-wrap reveal">
+        <div class="cta-layout">
+          <div class="cta-benefits">
+            <h2 data-lang="cta-title">¿Quieres ser de los primeros?</h2>
+            <p data-lang="cta-subtitle">Lista de espera para el lanzamiento en iOS y Android.</p>
+            <ul class="cta-perks">
+              <li data-lang="cta-perk-1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Aviso cuando lancemos Planit</li>
+              <li data-lang="cta-perk-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Sin spam: solo novedades del proyecto</li>
+              <li data-lang="cta-perk-3"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Puedes darte de baja cuando quieras</li>
+            </ul>
+          </div>
+
+          <form id="waitlist-form" class="waitlist-form" method="POST">
             <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
-            <input type="hidden" name="terms_version" value="2026-05">
+            <input type="hidden" name="product" value="Planit">
+            <input type="hidden" name="terms_version" value="2026-06">
             <input type="hidden" name="privacy_accepted" id="privacy-accepted-field" value="no">
             <input type="hidden" name="marketing_consent" id="marketing-consent-field" value="no">
-            <input type="hidden" name="consent_language" id="consent-language-field" value="en">
-            <div class="flex flex-col sm:flex-row gap-4">
-                <input type="email" name="email" id="waitlist-email" placeholder="your.email@example.com" autocomplete="email" class="w-full px-5 py-3 rounded-full border-2 border-gray-200 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/50 transition" required />
-                <button type="submit" class="btn-brand font-bold py-3 px-8 rounded-full flex-shrink-0" data-lang="cta-button">Join the waitlist</button>
-            </div>
-            <div class="mt-4 flex items-start justify-center text-sm text-gray-600 text-left max-w-lg mx-auto">
-                <input type="checkbox" id="terms" name="terms" required class="mt-1 mr-2 w-4 h-4 text-brand border-gray-300 rounded focus:ring-brand flex-shrink-0" />
-                <label for="terms" class="cursor-pointer">
-                    <span data-lang="terms-text">I confirm I am at least 16 years old and I have read and accept the <span class="modal-link" data-type="terms">Terms & Conditions</span>, the <span class="modal-link" data-type="privacy">Privacy Policy</span> and the <span class="modal-link" data-type="legal">Legal Notice</span>.</span>
-                </label>
-            </div>
-            <div class="mt-3 flex items-start justify-center text-sm text-gray-600 text-left max-w-lg mx-auto">
-                <input type="checkbox" id="marketing" class="mt-1 mr-2 w-4 h-4 text-brand border-gray-300 rounded focus:ring-brand flex-shrink-0" />
-                <label for="marketing" class="cursor-pointer">
-                    <span data-lang="marketing-text">I agree to receive promotional emails and offers from Planit (optional). I can unsubscribe at any time.</span>
-                </label>
-            </div>
-            <p class="text-xs text-gray-400 mt-4 max-w-lg mx-auto leading-relaxed" data-lang="privacy-policy">Your email is used only to manage the waitlist. Submissions are processed by <a href="https://formspree.io" target="_blank" rel="noopener noreferrer" class="underline hover:text-brand">Formspree</a>, our form provider. We do not sell your data. See our <span class="modal-link" data-type="privacy">Privacy Policy</span>.</p>
-            <p class="text-xs text-gray-400 mt-2 max-w-lg mx-auto leading-relaxed" data-lang="disclaimer-short">Planit is in development. Joining the waitlist does not guarantee access, launch date, or availability in your region.</p>
-        </form>
-    </div>
-</section>
+            <input type="hidden" name="consent_language" id="consent-language-field" value="es">
 
-<!-- Footer -->
-<footer class="bg-white border-t border-gray-100">
-    <div class="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col items-center gap-4 mb-6 text-center">
-            <nav class="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm text-gray-600" aria-label="Legal">
-                <button type="button" class="modal-link hover:text-brand" data-type="terms" data-lang="footer-terms">Terms</button>
-                <span class="text-gray-300" aria-hidden="true">·</span>
-                <button type="button" class="modal-link hover:text-brand" data-type="privacy" data-lang="footer-privacy">Privacy</button>
-                <span class="text-gray-300" aria-hidden="true">·</span>
-                <button type="button" class="modal-link hover:text-brand" data-type="legal" data-lang="footer-legal">Legal Notice</button>
-                <span class="text-gray-300" aria-hidden="true">·</span>
-                <button type="button" class="modal-link hover:text-brand" data-type="cookies" data-lang="footer-cookies">Cookies</button>
-                <span class="text-gray-300" aria-hidden="true">·</span>
-                <a href="mailto:aplicacionplanit@gmail.com" class="hover:text-brand" data-lang="footer-contact">Contact</a>
-            </nav>
-            <p class="text-xs text-gray-400 max-w-2xl leading-relaxed" data-lang="footer-disclaimer">Planit is a project in development. Content on this site is for information only and does not constitute a contract or offer.</p>
-        </div>
-        <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-            <div class="flex items-center space-x-4">
-                <img src="./assets/logo.png" alt="Planit Logo" class="h-6">
-                <p class="text-sm text-gray-500">&copy; 2026 Planit. <span data-lang="footer-rights">All rights reserved.</span></p>
+            <div class="waitlist-row">
+              <input type="email" name="email" id="waitlist-email" required placeholder="tu@email.com" autocomplete="email" class="waitlist-input" data-lang-placeholder="cta-placeholder">
+              <button type="submit" class="btn-primary btn-shimmer" style="white-space:nowrap" data-lang="cta-button">Unirme</button>
             </div>
-            <div class="flex items-center space-x-6">
-                <a href="https://www.instagram.com/getplanit/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @getplanit" class="inline-flex items-center gap-2 text-gray-600 hover:text-brand transition-colors font-medium">
-                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <rect x="2" y="2" width="20" height="20" rx="5"/>
-                        <circle cx="12" cy="12" r="4"/>
-                        <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
-                    </svg>
-                    <span>@getplanit</span>
-                </a>
 
-                <div class="text-sm">
-                    <select id="language-switcher" class="font-semibold text-gray-700 border rounded p-1">
-                        <option value="en">English</option>
-                        <option value="es">Español</option>
-                    </select>
-                </div>
+            <div class="form-check">
+              <input type="checkbox" id="terms" required>
+              <label for="terms"><span data-lang="terms-text">Acepto los Términos y la Privacidad.</span></label>
             </div>
+            <div class="form-check">
+              <input type="checkbox" id="marketing">
+              <label for="marketing"><span data-lang="marketing-text">Acepto recibir novedades sobre Planit.</span></label>
+            </div>
+
+            <p id="form-status" class="form-footnote hidden" role="status"></p>
+            <p class="form-footnote" data-lang="privacy-policy">Tu correo se usa solo para gestionar la lista de espera.</p>
+            <p class="form-footnote" data-lang="disclaimer-short">Planit está en desarrollo.</p>
+          </form>
         </div>
+      </div>
     </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <nav class="footer-nav" aria-label="Legal">
+        <a href="./terminos.html" data-lang="footer-terms">Términos</a>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="./privacidad.html" data-lang="footer-privacy">Privacidad</a>
+        <span class="sep" aria-hidden="true">·</span>
+        <button type="button" class="modal-link" data-type="legal" data-lang="footer-legal">Aviso Legal</button>
+        <span class="sep" aria-hidden="true">·</span>
+        <button type="button" class="modal-link" data-type="cookies" data-lang="footer-cookies">Cookies</button>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="mailto:aplicacionplanit@gmail.com" data-lang="footer-contact">Contacto</a>
+      </nav>
+      <p class="form-footnote" style="max-width:36rem;text-align:center" data-lang="footer-disclaimer">Planit es un proyecto en desarrollo.</p>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-brand">
+        <img src="./assets/logo.png" alt="Planit" class="footer-logo" loading="lazy" width="713" height="281" title="Planit">
+        <span>&copy; <span id="year"></span> Planit. <span data-lang="footer-rights">Todos los derechos reservados.</span></span>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/getplanit/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @getplanit">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          <span>@getplanit</span>
+        </a>
+        <select id="language-switcher" class="lang-select" aria-label="Idioma">
+          <option value="es">Español</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+    </div>
+  </div>
 </footer>
 
-<!-- Modal Terms & Privacy -->
-<div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
-    <div class="bg-white rounded-xl max-w-2xl w-full p-6 relative max-h-[90vh] flex flex-col">
-        <button id="modal-close" type="button" class="absolute top-4 right-4 text-gray-500 hover:text-gray-900 text-2xl" aria-label="Close">&times;</button>
-        <h2 id="modal-title" class="text-xl font-bold mb-4 pr-8"></h2>
-        <div id="modal-content" class="text-gray-700 text-sm leading-relaxed overflow-y-auto flex-1"></div>
-    </div>
+<div id="modal" class="hidden">
+  <div>
+    <button id="modal-close" type="button" aria-label="Cerrar">&times;</button>
+    <h2 id="modal-title" class="modal-title"></h2>
+    <div id="modal-content" class="modal-body"></div>
+  </div>
 </div>
 
-<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 hidden">
-    <div class="container mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-sm text-gray-600 text-center sm:text-left" data-lang="cookie-text">We use essential storage (language preference) and third-party services (Formspree, fonts). See our <span class="modal-link" data-type="cookies">Cookie Policy</span>.</p>
-        <div class="flex gap-3 flex-shrink-0">
-            <button type="button" id="cookie-reject" class="px-4 py-2 text-sm font-semibold text-gray-600 border border-gray-300 rounded-full hover:bg-gray-50" data-lang="cookie-reject">Reject non-essential</button>
-            <button type="button" id="cookie-accept" class="px-4 py-2 text-sm font-semibold text-white rounded-full btn-brand" data-lang="cookie-accept">Accept</button>
-        </div>
+<div id="cookie-banner" class="hidden">
+  <div class="cookie-inner">
+    <p class="cookie-text" data-lang="cookie-text">Usamos cookies esenciales y servicios de terceros.</p>
+    <div style="display:flex;gap:0.65rem;flex-shrink:0">
+      <button type="button" id="cookie-reject" class="btn-ghost btn-sm" data-lang="cookie-reject">Rechazar</button>
+      <button type="button" id="cookie-accept" class="btn-primary btn-sm" data-lang="cookie-accept">Aceptar</button>
     </div>
+  </div>
 </div>
 
-<script src="/legal.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-
-    // --- LANGUAGE SWITCHER ---
-    const translations = {
-        en: {
-            'notify-me': "Get Notified",
-            'hero-title': "Organize plans with friends <br class='hidden md:block'>in a fun and easy way!",
-            'hero-subtitle': "Coming soon to iOS & Android",
-            'notify-me-cta': "Notify me when it's available",
-            'cta-title': "Want to be the first to try it?",
-            'cta-subtitle': "Join the waiting list to be notified when Planit launches.",
-            'cta-button': "Join the waitlist",
-            'privacy-policy': 'Your email is used only to manage the waitlist. Submissions are processed by <a href="https://formspree.io" target="_blank" rel="noopener noreferrer" class="underline hover:text-brand">Formspree</a>, our form provider. We do not sell your data. See our <span class="modal-link" data-type="privacy">Privacy Policy</span>.',
-            'terms-text': 'I confirm I am at least 16 years old and I have read and accept the <span class="modal-link" data-type="terms">Terms & Conditions</span>, the <span class="modal-link" data-type="privacy">Privacy Policy</span> and the <span class="modal-link" data-type="legal">Legal Notice</span>.',
-            'marketing-text': 'I agree to receive promotional emails and offers from Planit (optional). I can unsubscribe at any time.',
-            'disclaimer-short': 'Planit is in development. Joining the waitlist does not guarantee access, launch date, or availability in your region.',
-            'footer-terms': 'Terms',
-            'footer-privacy': 'Privacy',
-            'footer-legal': 'Legal Notice',
-            'footer-cookies': 'Cookies',
-            'footer-contact': 'Contact',
-            'footer-disclaimer': 'Planit is a project in development. Content on this site is for information only and does not constitute a contract or offer.',
-            'footer-rights': 'All rights reserved.',
-            'cookie-text': 'We use essential storage (language preference) and third-party services (Formspree, fonts). See our <span class="modal-link" data-type="cookies">Cookie Policy</span>.',
-            'cookie-reject': 'Reject non-essential',
-            'cookie-accept': 'Accept',
-            'features-title': "What can you do with Planit?",
-            'features-subtitle': "Everything you need to turn ideas into incredible experiences.",
-            'feature1-title': "Create plans and sub-plans",
-            'feature1-desc': "Organize every detail, from the main event to the smallest tasks.",
-            'feature2-title': "Propose & split costs",
-            'feature2-desc': "Suggest activities and manage expenses transparently and fairly.",
-            'feature3-title': "Vote on everything",
-            'feature3-desc': "Let the group decide on dates, locations, and activities democratically.",
-            'feature4-title': "Notifications & Reminders",
-            'feature4-desc': "Stay updated on all plan activities and never miss a deadline.",
-            'showcase-title': "We are building something amazing!",
-            'showcase-desc': "We're working hard to launch Planit very soon on iOS and Android. Take a sneak peek at what's coming. The future of social planning is almost here."
-        },
-        es: {
-            'notify-me': "Avísame",
-            'hero-title': "Organiza planes con amigos <br class='hidden md:block'>de forma fácil y divertida.",
-            'hero-subtitle': "Próximamente en iOS y Android",
-            'notify-me-cta': "Avísame cuando esté disponible",
-            'cta-title': "¿Quieres ser el primero en probarlo?",
-            'cta-subtitle': "Únete a la lista de espera para recibir avisos cuando lancemos Planit.",
-            'cta-button': "Unirme a la lista",
-            'privacy-policy': 'Tu correo se usa solo para gestionar la lista de espera. Los envíos se procesan mediante <a href="https://formspree.io" target="_blank" rel="noopener noreferrer" class="underline hover:text-brand">Formspree</a>, nuestro proveedor de formularios. No vendemos tus datos. Consulta nuestra <span class="modal-link" data-type="privacy">Política de Privacidad</span>.',
-            'terms-text': 'Confirmo que tengo al menos 16 años y que he leído y acepto los <span class="modal-link" data-type="terms">Términos y Condiciones</span>, la <span class="modal-link" data-type="privacy">Política de Privacidad</span> y el <span class="modal-link" data-type="legal">Aviso Legal</span>.',
-            'marketing-text': 'Acepto recibir correos promocionales y ofertas de Planit (opcional). Puedo darme de baja en cualquier momento.',
-            'disclaimer-short': 'Planit está en desarrollo. Apuntarse a la lista no garantiza acceso, fecha de lanzamiento ni disponibilidad en tu región.',
-            'footer-terms': 'Términos',
-            'footer-privacy': 'Privacidad',
-            'footer-legal': 'Aviso Legal',
-            'footer-cookies': 'Cookies',
-            'footer-contact': 'Contacto',
-            'footer-disclaimer': 'Planit es un proyecto en desarrollo. Los contenidos de esta web son informativos y no constituyen contrato ni oferta.',
-            'footer-rights': 'Todos los derechos reservados.',
-            'cookie-text': 'Usamos almacenamiento esencial (idioma) y servicios de terceros (Formspree, fuentes). Consulta nuestra <span class="modal-link" data-type="cookies">Política de Cookies</span>.',
-            'cookie-reject': 'Rechazar no esenciales',
-            'cookie-accept': 'Aceptar',
-            'features-title': "¿Qué puedes hacer con Planit?",
-            'features-subtitle': "Todo lo que necesitas para convertir ideas en experiencias increíbles.",
-            'feature1-title': "Crear planes y subplanes",
-            'feature1-desc': "Organiza cada detalle, del evento principal a las tareas más pequeñas.",
-            'feature2-title': "Proponer y dividir costos",
-            'feature2-desc': "Sugiere actividades y gestiona los gastos de forma transparente y justa.",
-            'feature3-title': "Votar sobre todo",
-            'feature3-desc': "Deja que el grupo decida fechas, lugares y actividades de forma democrática.",
-            'feature4-title': "Notificaciones y recordatorios",
-            'feature4-desc': "Mantente al día de todas las actividades del plan y no pierdas ningún plazo.",
-            'showcase-title': "¡Estamos construyendo algo increíble!",
-            'showcase-desc': "Estamos trabajando para lanzar Planit muy pronto en iOS y Android. Echa un vistazo a lo que viene. El futuro de la planificación social está casi aquí."
-        }
-    };
-    
-    const languageSwitcher = document.getElementById('language-switcher');
-    let currentLang = localStorage.getItem('planit-lang') || 'en';
-
-    const setLanguage = (lang) => {
-        currentLang = lang;
-        localStorage.setItem('planit-lang', lang);
-        document.querySelectorAll('[data-lang]').forEach(el => {
-            const key = el.getAttribute('data-lang');
-            if (translations[lang][key]) {
-                el.innerHTML = translations[lang][key];
-            }
-        });
-        // Rebind modal links
-        bindModalLinks();
-        if(languageSwitcher) languageSwitcher.value = lang;
-        const consentLangField = document.getElementById('consent-language-field');
-        if (consentLangField) consentLangField.value = lang;
-    };
-    if(languageSwitcher){
-        languageSwitcher.addEventListener('change', e => setLanguage(e.target.value));
-    }
-    setLanguage(currentLang);
-
-    // --- MODAL TERMS & PRIVACY ---
-    const modal = document.getElementById('modal');
-    const modalTitle = document.getElementById('modal-title');
-    const modalContent = document.getElementById('modal-content');
-    const modalClose = document.getElementById('modal-close');
-
-    function openLegalModal(type) {
-        const doc = typeof LEGAL_TEXTS !== 'undefined' ? LEGAL_TEXTS[currentLang][type] : null;
-        if (!doc) return;
-        modalTitle.textContent = doc.title;
-        modalContent.innerHTML = doc.content;
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-        bindModalLinks();
-    }
-
-    function bindModalLinks() {
-        document.querySelectorAll('.modal-link').forEach(link => {
-            link.replaceWith(link.cloneNode(true));
-        });
-        document.querySelectorAll('.modal-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                openLegalModal(link.getAttribute('data-type'));
-            });
-        });
-    }
-    bindModalLinks();
-
-    // --- WAITLIST FORM: consent audit trail ---
-    const waitlistForm = document.getElementById('waitlist-form');
-    if (waitlistForm) {
-        waitlistForm.addEventListener('submit', () => {
-            const termsChecked = document.getElementById('terms').checked;
-            document.getElementById('privacy-accepted-field').value = termsChecked ? 'yes' : 'no';
-            document.getElementById('marketing-consent-field').value = document.getElementById('marketing').checked ? 'yes' : 'no';
-            document.getElementById('consent-language-field').value = currentLang;
-            let tsField = waitlistForm.querySelector('input[name="consent_timestamp"]');
-            if (!tsField) {
-                tsField = document.createElement('input');
-                tsField.type = 'hidden';
-                tsField.name = 'consent_timestamp';
-                waitlistForm.appendChild(tsField);
-            }
-            tsField.value = new Date().toISOString();
-        });
-    }
-
-    // --- COOKIE CONSENT ---
-    const cookieBanner = document.getElementById('cookie-banner');
-    const cookieAccept = document.getElementById('cookie-accept');
-    const cookieReject = document.getElementById('cookie-reject');
-    const COOKIE_CONSENT_KEY = 'planit-cookie-consent';
-
-    function hideCookieBanner() {
-        if (cookieBanner) cookieBanner.classList.add('hidden');
-    }
-
-    function showCookieBanner() {
-        if (cookieBanner) cookieBanner.classList.remove('hidden');
-    }
-
-    if (!localStorage.getItem(COOKIE_CONSENT_KEY)) {
-        showCookieBanner();
-    }
-
-    if (cookieAccept) {
-        cookieAccept.addEventListener('click', () => {
-            localStorage.setItem(COOKIE_CONSENT_KEY, 'accepted');
-            hideCookieBanner();
-        });
-    }
-    if (cookieReject) {
-        cookieReject.addEventListener('click', () => {
-            localStorage.setItem(COOKIE_CONSENT_KEY, 'rejected');
-            hideCookieBanner();
-        });
-    }
-
-    modalClose.addEventListener('click', () => { modal.classList.add('hidden'); modal.classList.remove('flex'); });
-    modal.addEventListener('click', (e) => { if(e.target === modal){ modal.classList.add('hidden'); modal.classList.remove('flex'); } });
-
-    // ----- PARTICLES -----
-    const canvas = document.getElementById('particle-canvas');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    let particlesArray = [];
-    const colors = ['#FF033E', '#FF6F91', '#FF9CA3', '#FF3366'];
-
-    class Particle {
-        constructor(x, y, size, color, velocityX, velocityY){ this.x=x; this.y=y; this.size=size; this.color=color; this.vx=velocityX; this.vy=velocityY; }
-        draw(){ ctx.beginPath(); ctx.arc(this.x,this.y,this.size,0,Math.PI*2); ctx.fillStyle=this.color; ctx.fill(); }
-        update(){ this.x+=this.vx; this.y+=this.vy; if(this.x>canvas.width)this.x=0; if(this.x<0)this.x=canvas.width; if(this.y>canvas.height)this.y=0; if(this.y<0)this.y=canvas.height; this.draw(); }
-    }
-
-    function initParticles(num){ particlesArray=[]; for(let i=0;i<num;i++){ const size=Math.random()*3+1; const x=Math.random()*canvas.width; const y=Math.random()*canvas.height; const color=colors[Math.floor(Math.random()*colors.length)]; const vx=(Math.random()-0.5)*0.5; const vy=(Math.random()-0.5)*0.5; particlesArray.push(new Particle(x,y,size,color,vx,vy)); } }
-    function animateParticles(){ ctx.clearRect(0,0,canvas.width,canvas.height); particlesArray.forEach(p=>p.update()); requestAnimationFrame(animateParticles); }
-    initParticles(120); animateParticles();
-    window.addEventListener('resize', () => { canvas.width=window.innerWidth; canvas.height=window.innerHeight; initParticles(120); });
-
-    // ----- PARALLAX INTERACTIVE -----
-    const parallaxContainer = document.getElementById('parallax-scene');
-    const parallaxItems = document.querySelectorAll('.parallax-item');
-    parallaxContainer.addEventListener('mousemove', (e) => {
-        const rect = parallaxContainer.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width/2;
-        const y = e.clientY - rect.top - rect.height/2;
-        parallaxItems.forEach(item => {
-            const depth = item.style.transform.match(/translateZ\((\d+)px\)/);
-            const z = depth ? parseFloat(depth[1]) : 20;
-            const moveX = x * z / 2000;
-            const moveY = y * z / 2000;
-            item.style.transform = `translate(${moveX}px, ${moveY}px) translateZ(${z}px)`;
-        });
-    });
-
-});
-</script>
-
+<script src="./legal.js" defer></script>
+<script src="./site.js" defer></script>
 </body>
 </html>

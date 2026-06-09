@@ -1,15 +1,15 @@
-/* Legal texts — Planit waitlist (EN/ES). Version: 2026-05 */
+/* Legal texts — Planit waitlist (EN/ES). Version: 2026-06 */
 const LEGAL_TEXTS = {
   en: {
     terms: {
       title: "Terms & Conditions",
       content: `
-<p><strong>Version:</strong> May 2026 · <strong>Website:</strong> <a href="https://www.getplanit.app/">getplanit.app</a></p>
+<p><strong>Version:</strong> June 2026 · <strong>Website:</strong> <a href="https://www.getplanit.app/">getplanit.app</a></p>
 <br>
 <p>These Terms & Conditions ("Terms") govern your access to the Planit website and waitlist. By using the site or submitting the form, you agree to these Terms, our Privacy Policy, and Legal Notice.</p>
 <br>
 <p><strong>1. Operator</strong><br>
-The website is operated under the name <strong>Planit</strong> ("we", "us"). Contact: <a href="mailto:aplicacionplanit@gmail.com">aplicacionplanit@gmail.com</a>.</p>
+The website is operated by <strong>Buildit Labs</strong> ("we", "us"), developer of the Planit app. Contact: <a href="mailto:aplicacionplanit@gmail.com">aplicacionplanit@gmail.com</a>.</p>
 <br>
 <p><strong>2. Service description</strong><br>
 Planit is a mobile application project in development. This website provides information and a voluntary waitlist. We do <strong>not</strong> guarantee that the app will launch, on which date, in which countries, or that waitlist members will receive early access, benefits, or any specific feature.</p>
@@ -24,7 +24,7 @@ Registering on the waitlist does not create a purchase contract, employment, par
 You must not: submit false data; use bots or automated means; attempt to disrupt the site; infringe intellectual property or third-party rights; or use the waitlist for unlawful purposes.</p>
 <br>
 <p><strong>6. Intellectual property</strong><br>
-Trademarks, logos, text, design, and graphics on this site belong to Planit or their respective owners. Reproduction without permission is prohibited.</p>
+Trademarks, logos, text, design, and graphics on this site belong to Buildit Labs or their respective owners. Reproduction without permission is prohibited.</p>
 <br>
 <p><strong>7. Third-party links and services</strong><br>
 The site may link to third parties (e.g. social networks, Formspree). We are not responsible for their content or practices. Your use of third-party services is at your own risk.</p>
@@ -33,10 +33,10 @@ The site may link to third parties (e.g. social networks, Formspree). We are not
 The website and waitlist are provided <strong>"as is"</strong> and <strong>"as available"</strong>, without warranties of any kind, express or implied, including merchantability, fitness for a particular purpose, or non-infringement, to the fullest extent permitted by law.</p>
 <br>
 <p><strong>9. Limitation of liability</strong><br>
-To the maximum extent permitted by applicable law, Planit shall not be liable for indirect, incidental, special, consequential, or punitive damages, loss of profits, data, or goodwill, arising from your use of the site or waitlist, including failures of Formspree or other third parties. Our total liability for any claim relating to the waitlist shall not exceed fifty euros (€50) or the minimum amount permitted by law if lower.</p>
+To the maximum extent permitted by applicable law, Buildit Labs shall not be liable for indirect, incidental, special, consequential, or punitive damages, loss of profits, data, or goodwill, arising from your use of the site or waitlist, including failures of Formspree or other third parties. Our total liability for any claim relating to the waitlist shall not exceed fifty euros (€50) or the minimum amount permitted by law if lower.</p>
 <br>
 <p><strong>10. Indemnification</strong><br>
-You agree to indemnify and hold harmless Planit from claims, damages, and expenses (including reasonable legal fees) arising from your breach of these Terms or misuse of the site.</p>
+You agree to indemnify and hold harmless Buildit Labs from claims, damages, and expenses (including reasonable legal fees) arising from your breach of these Terms or misuse of the site.</p>
 <br>
 <p><strong>11. Force majeure</strong><br>
 We are not liable for failure or delay due to events beyond our reasonable control (e.g. outages, cyberattacks, legal changes, natural disasters).</p>
@@ -57,8 +57,8 @@ These Terms are governed by the laws of <strong>Spain</strong>, without prejudic
     privacy: {
       title: "Privacy Policy",
       content: `
-<p><strong>Data controller:</strong> Planit · <a href="mailto:aplicacionplanit@gmail.com">aplicacionplanit@gmail.com</a><br>
-<strong>Version:</strong> May 2026 · <strong>Website:</strong> <a href="https://www.getplanit.app/">getplanit.app</a></p>
+<p><strong>Data controller:</strong> Buildit Labs · <a href="mailto:aplicacionplanit@gmail.com">aplicacionplanit@gmail.com</a><br>
+<strong>Version:</strong> June 2026 · <strong>Website:</strong> <a href="https://www.getplanit.app/">getplanit.app</a></p>
 <br>
 <p>This Privacy Policy describes how we process personal data when you visit our site and join the waitlist, in accordance with Regulation (EU) 2016/679 (GDPR) and applicable Spanish data protection law (LOPDGDD).</p>
 <br>
@@ -109,10 +109,10 @@ We may update this policy. The current version is always available on this websi
       content: `
 <p>In compliance with Spanish Law 34/2002 (LSSI-CE) on information society services:</p>
 <br>
-<p><strong>Website owner:</strong> Planit<br>
+<p><strong>Website owner:</strong> Buildit Labs<br>
 <strong>Website:</strong> <a href="https://www.getplanit.app/">https://www.getplanit.app</a><br>
 <strong>Contact email:</strong> <a href="mailto:aplicacionplanit@gmail.com">aplicacionplanit@gmail.com</a><br>
-<strong>Activity:</strong> Promotion of the Planit mobile application (in development) and management of a waitlist.</p>
+<strong>Activity:</strong> Promotion of the Planit social planning app (in development) and management of a waitlist.</p>
 <br>
 <p><strong>Purpose of the website</strong><br>
 To provide information about Planit and allow users to voluntarily register interest via email. Content is for general information only.</p>
@@ -121,7 +121,7 @@ To provide information about Planit and allow users to voluntarily register inte
 All contents of this website (texts, images, logos, design, source code) are protected. Reproduction, distribution, or transformation without express authorization is prohibited.</p>
 <br>
 <p><strong>Liability</strong><br>
-Planit is not responsible for misuse of the website by users, nor for damages arising from interruptions, viruses, or third-party actions beyond our reasonable control. We strive to keep information accurate but do not warrant it is complete or up to date.</p>
+Buildit Labs is not responsible for misuse of the website by users, nor for damages arising from interruptions, viruses, or third-party actions beyond our reasonable control. We strive to keep information accurate but do not warrant it is complete or up to date.</p>
 <br>
 <p><strong>External links</strong><br>
 Links to third-party sites (Instagram, Formspree, etc.) are provided for convenience. We do not control and are not responsible for their content or policies.</p>
@@ -133,7 +133,7 @@ Processing of personal data is described in our <span class="modal-link" data-ty
     cookies: {
       title: "Cookie Policy",
       content: `
-<p><strong>Version:</strong> May 2026</p>
+<p><strong>Version:</strong> June 2026</p>
 <br>
 <p>This site uses cookies and similar technologies as described below.</p>
 <br>
@@ -145,7 +145,6 @@ These are required for basic operation and do not require consent under ePrivacy
 <p><strong>2. Third-party services</strong><br>
 When you use the waitlist form, data is sent to <strong>Formspree</strong>. When pages load, resources may be requested from:<br>
 - <strong>Google Fonts</strong> (fonts.googleapis.com / fonts.gstatic.com)<br>
-- <strong>Tailwind CDN</strong> (cdn.tailwindcss.com) for styling<br>
 These providers may process technical data (IP, device info). See their respective privacy policies.</p>
 <br>
 <p><strong>3. Your choice</strong><br>
@@ -160,12 +159,12 @@ See our <span class="modal-link" data-type="privacy">Privacy Policy</span> or co
     terms: {
       title: "Términos y Condiciones",
       content: `
-<p><strong>Versión:</strong> mayo 2026 · <strong>Web:</strong> <a href="https://www.getplanit.app/">getplanit.app</a></p>
+<p><strong>Versión:</strong> junio 2026 · <strong>Web:</strong> <a href="https://www.getplanit.app/">getplanit.app</a></p>
 <br>
 <p>Estos Términos y Condiciones ("Términos") regulan el acceso a la web de Planit y a la lista de espera. Al usar el sitio o enviar el formulario, aceptas estos Términos, nuestra Política de Privacidad y el Aviso Legal.</p>
 <br>
 <p><strong>1. Titular</strong><br>
-La web se opera bajo el nombre <strong>Planit</strong> ("nosotros"). Contacto: <a href="mailto:aplicacionplanit@gmail.com">aplicacionplanit@gmail.com</a>.</p>
+La web es operada por <strong>Buildit Labs</strong> ("nosotros"), desarrolladora de la app Planit. Contacto: <a href="mailto:aplicacionplanit@gmail.com">aplicacionplanit@gmail.com</a>.</p>
 <br>
 <p><strong>2. Descripción del servicio</strong><br>
 Planit es un proyecto de aplicación móvil en desarrollo. Esta web ofrece información y una lista de espera voluntaria. <strong>No</strong> garantizamos que la app se publique, en qué fecha, en qué países, ni que los inscritos reciban acceso anticipado, beneficios o funciones concretas.</p>
@@ -180,7 +179,7 @@ Apuntarse a la lista no crea contrato de compra, laboral, societario ni obligaci
 No debes: enviar datos falsos; usar bots; intentar alterar el sitio; vulnerar propiedad intelectual o derechos de terceros; ni usar la lista con fines ilícitos.</p>
 <br>
 <p><strong>6. Propiedad intelectual</strong><br>
-Marcas, logos, textos, diseño y gráficos del sitio pertenecen a Planit o a sus titulares. Queda prohibida su reproducción sin autorización.</p>
+Marcas, logos, textos, diseño y gráficos del sitio pertenecen a Buildit Labs o a sus licenciantes. Queda prohibida su reproducción sin autorización.</p>
 <br>
 <p><strong>7. Enlaces y servicios de terceros</strong><br>
 El sitio puede enlazar a terceros (redes sociales, Formspree). No somos responsables de su contenido o prácticas. Su uso es bajo tu propio riesgo.</p>
@@ -189,10 +188,10 @@ El sitio puede enlazar a terceros (redes sociales, Formspree). No somos responsa
 La web y la lista se ofrecen <strong>"tal cual"</strong> y <strong>"según disponibilidad"</strong>, sin garantías de ningún tipo, expresas o implícitas, en la máxima medida permitida por la ley.</p>
 <br>
 <p><strong>9. Limitación de responsabilidad</strong><br>
-En la máxima medida legal, Planit no será responsable de daños indirectos, lucro cesante, pérdida de datos o daños derivados del uso de la web o la lista, incluidos fallos de Formspree u otros terceros. La responsabilidad total por reclamaciones relacionadas con la lista no excederá de cincuenta euros (50 €) o el mínimo legal si fuera inferior.</p>
+En la máxima medida legal, Buildit Labs no será responsable de daños indirectos, lucro cesante, pérdida de datos o daños derivados del uso de la web o la lista, incluidos fallos de Formspree u otros terceros. La responsabilidad total por reclamaciones relacionadas con la lista no excederá de cincuenta euros (50 €) o el mínimo legal si fuera inferior.</p>
 <br>
 <p><strong>10. Indemnización</strong><br>
-Te comprometes a indemnizar a Planit frente a reclamaciones, daños y gastos (incluidos honorarios legales razonables) derivados de tu incumplimiento de estos Términos o uso indebido del sitio.</p>
+Te comprometes a indemnizar a Buildit Labs frente a reclamaciones, daños y gastos (incluidos honorarios legales razonables) derivados de tu incumplimiento de estos Términos o uso indebido del sitio.</p>
 <br>
 <p><strong>11. Fuerza mayor</strong><br>
 No respondemos por incumplimientos debidos a causas fuera de nuestro control razonable (caídas de servicio, ciberataques, cambios legales, catástrofes, etc.).</p>
@@ -213,8 +212,8 @@ Estos Términos se rigen por la ley de <strong>España</strong>, sin perjuicio d
     privacy: {
       title: "Política de Privacidad",
       content: `
-<p><strong>Responsable:</strong> Planit · <a href="mailto:aplicacionplanit@gmail.com">aplicacionplanit@gmail.com</a><br>
-<strong>Versión:</strong> mayo 2026 · <strong>Web:</strong> <a href="https://www.getplanit.app/">getplanit.app</a></p>
+<p><strong>Responsable:</strong> Buildit Labs · <a href="mailto:aplicacionplanit@gmail.com">aplicacionplanit@gmail.com</a><br>
+<strong>Versión:</strong> junio 2026 · <strong>Web:</strong> <a href="https://www.getplanit.app/">getplanit.app</a></p>
 <br>
 <p>Esta Política de Privacidad describe cómo tratamos datos personales cuando visitas nuestro sitio y te apuntas a la lista de espera, conforme al Reglamento (UE) 2016/679 (RGPD) y la LOPDGDD.</p>
 <br>
@@ -265,10 +264,10 @@ Podemos actualizar esta política. La versión vigente estará siempre en esta w
       content: `
 <p>En cumplimiento de la Ley 34/2002 (LSSI-CE) de servicios de la sociedad de la información:</p>
 <br>
-<p><strong>Titular de la web:</strong> Planit<br>
+<p><strong>Titular de la web:</strong> Buildit Labs<br>
 <strong>Sitio web:</strong> <a href="https://www.getplanit.app/">https://www.getplanit.app</a><br>
 <strong>Email de contacto:</strong> <a href="mailto:aplicacionplanit@gmail.com">aplicacionplanit@gmail.com</a><br>
-<strong>Actividad:</strong> Promoción de la aplicación móvil Planit (en desarrollo) y gestión de lista de espera.</p>
+<strong>Actividad:</strong> Promoción de la app de planificación social Planit (en desarrollo) y gestión de lista de espera.</p>
 <br>
 <p><strong>Objeto del sitio</strong><br>
 Informar sobre Planit y permitir el registro voluntario de interés por correo electrónico. Los contenidos tienen carácter informativo.</p>
@@ -277,7 +276,7 @@ Informar sobre Planit y permitir el registro voluntario de interés por correo e
 Todos los contenidos (textos, imágenes, logos, diseño, código) están protegidos. Queda prohibida su reproducción o transformación sin autorización expresa.</p>
 <br>
 <p><strong>Responsabilidad</strong><br>
-Planit no se hace responsable del uso indebido del sitio por usuarios, ni de daños por interrupciones, virus o actuaciones de terceros fuera de nuestro control razonable. Procuramos que la información sea correcta, sin garantizar que esté completa o actualizada.</p>
+Buildit Labs no se hace responsable del uso indebido del sitio por usuarios, ni de daños por interrupciones, virus o actuaciones de terceros fuera de nuestro control razonable. Procuramos que la información sea correcta, sin garantizar que esté completa o actualizada.</p>
 <br>
 <p><strong>Enlaces externos</strong><br>
 Los enlaces a sitios de terceros (Instagram, Formspree, etc.) se ofrecen por comodidad. No controlamos ni somos responsables de su contenido o políticas.</p>
@@ -289,7 +288,7 @@ El tratamiento de datos se describe en nuestra <span class="modal-link" data-typ
     cookies: {
       title: "Política de Cookies",
       content: `
-<p><strong>Versión:</strong> mayo 2026</p>
+<p><strong>Versión:</strong> junio 2026</p>
 <br>
 <p>Este sitio utiliza cookies y tecnologías similares según se describe a continuación.</p>
 <br>
@@ -301,7 +300,6 @@ No requieren consentimiento según la normativa de cookies para su funcionamient
 <p><strong>2. Servicios de terceros</strong><br>
 Al usar el formulario, los datos se envían a <strong>Formspree</strong>. Al cargar la página pueden solicitarse recursos de:<br>
 - <strong>Google Fonts</strong> (fonts.googleapis.com / fonts.gstatic.com)<br>
-- <strong>Tailwind CDN</strong> (cdn.tailwindcss.com)<br>
 Estos proveedores pueden tratar datos técnicos (IP, dispositivo). Consulta sus políticas de privacidad.</p>
 <br>
 <p><strong>3. Tu elección</strong><br>
