@@ -1,5 +1,5 @@
 {
-  "name": "Planit - Coming Soon Webpage",
-  "description": "An application to create, organize, and manage social plans (trips, parties, meetings) with friends in a fun and efficient way. Features collaborative planning, cost splitting, voting, and an AI assistant to generate plans automatically.",
+  "name": "Planit — Organiza planes con amigos",
+  "description": "Landing page for Planit, a social planning app by Buildit Labs. Create plans with friends, vote on options, split costs and get reminders.",
   "requestFramePermissions": []
 }
