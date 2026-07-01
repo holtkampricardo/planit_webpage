@@ -13,6 +13,7 @@ const translations = {
   es: {
     'nav-features': 'Funciones',
     'nav-process': 'Cómo funciona',
+    'nav-compare': 'Por qué',
     'nav-faq': 'FAQ',
     'nav-privacy': 'Privacidad',
     'notify-me': 'Avísame',
@@ -20,7 +21,7 @@ const translations = {
     'hero-title': 'Organiza planes con amigos de forma fácil y divertida',
     'hero-title-accent': ['amigos', 'Planit'],
     'hero-subtitle-prefix': 'Coordina',
-    'hero-subtitle-suffix': ' sin caos en el grupo. Vota, divide gastos y no te pierdas nada.',
+    'hero-subtitle-suffix': 'sin caos en el grupo. Vota, divide gastos y no te pierdas nada.',
     'hero-rotate-words': ['viajes', 'cenas', 'fiestas'],
     'hero-explore': 'Explorar funciones',
     'hero-coming': 'Próximamente en iOS y Android',
@@ -31,6 +32,34 @@ const translations = {
     'ui-plan': 'Plan activo',
     'ui-vote': '¿Mejores fechas?',
     'ui-cost': 'Gastos compartidos',
+    'ui-friends': 'amigos',
+    'ui-balance-delta': 'Viaje playa · confirmado',
+    'mock-lodging': 'Alojamiento',
+    'mock-transport': 'Transporte',
+    'mock-dinner': 'Cena',
+    'mock-vote-opt': '15–20 jul',
+    'mock-vote-opt-count': '7 votos',
+    'mock-vote-base': '22–28 jul',
+    'mock-vote-base-count': '4 votos',
+    'mock-vote-pes': 'Agosto',
+    'mock-vote-pes-count': '1 voto',
+    'mock-vote-closes': 'Voto cierra hoy',
+    'mock-chat-user': '¿Cena o barbacoa?',
+    'mock-chat-ai': 'Barbacoa lidera con 5 votos',
+    'compare-chat-header': 'Grupo: Viaje playa 🏖️',
+    'compare-chat-1': 'Ana: ¿cuándo vamos?',
+    'compare-chat-2': 'Luis: no sé, mirad arriba',
+    'compare-chat-3': 'María: ???',
+    'compare-chat-4': 'Yo: ¿alguien tiene el Excel?',
+    'compare-chat-lost': '… 47 mensajes después …',
+    'compare-chat-warn': 'Todo mezclado · fechas perdidas · gastos sin repartir',
+    'compare-app-plan': 'Viaje playa 2026',
+    'compare-tag-dates': '15–20 jul · 7 votos',
+    'compare-tag-cost': '€124/persona',
+    'compare-tag-group': '8 confirmados',
+    'viz-tag-dates': 'Fechas',
+    'viz-tag-costs': 'Gastos',
+    'viz-tag-group': 'Grupo',
     'mq-1': 'Planes y subplanes',
     'mq-2': 'Votaciones',
     'mq-3': 'Dividir gastos',
@@ -138,6 +167,7 @@ const translations = {
   en: {
     'nav-features': 'Features',
     'nav-process': 'How it works',
+    'nav-compare': 'Why',
     'nav-faq': 'FAQ',
     'nav-privacy': 'Privacy',
     'notify-me': 'Notify me',
@@ -145,7 +175,7 @@ const translations = {
     'hero-title': 'Organize plans with friends in a fun and easy way',
     'hero-title-accent': ['friends', 'Planit'],
     'hero-subtitle-prefix': 'Coordinate',
-    'hero-subtitle-suffix': ' without group chat chaos. Vote, split costs and never miss a beat.',
+    'hero-subtitle-suffix': 'without group chat chaos. Vote, split costs and never miss a beat.',
     'hero-rotate-words': ['trips', 'dinners', 'parties'],
     'hero-explore': 'Explore features',
     'hero-coming': 'Coming soon on iOS & Android',
@@ -156,6 +186,34 @@ const translations = {
     'ui-plan': 'Active plan',
     'ui-vote': 'Best dates?',
     'ui-cost': 'Shared costs',
+    'ui-friends': 'friends',
+    'ui-balance-delta': 'Beach trip · confirmed',
+    'mock-lodging': 'Lodging',
+    'mock-transport': 'Transport',
+    'mock-dinner': 'Dinner',
+    'mock-vote-opt': 'Jul 15–20',
+    'mock-vote-opt-count': '7 votes',
+    'mock-vote-base': 'Jul 22–28',
+    'mock-vote-base-count': '4 votes',
+    'mock-vote-pes': 'August',
+    'mock-vote-pes-count': '1 vote',
+    'mock-vote-closes': 'Vote closes today',
+    'mock-chat-user': 'Dinner or BBQ?',
+    'mock-chat-ai': 'BBQ leads with 5 votes',
+    'compare-chat-header': 'Group: Beach trip 🏖️',
+    'compare-chat-1': 'Ana: when are we going?',
+    'compare-chat-2': 'Luis: idk, scroll up',
+    'compare-chat-3': 'María: ???',
+    'compare-chat-4': 'Me: does anyone have the spreadsheet?',
+    'compare-chat-lost': '… 47 messages later …',
+    'compare-chat-warn': 'All mixed up · lost dates · costs not split',
+    'compare-app-plan': 'Beach trip 2026',
+    'compare-tag-dates': 'Jul 15–20 · 7 votes',
+    'compare-tag-cost': '€124/person',
+    'compare-tag-group': '8 confirmed',
+    'viz-tag-dates': 'Dates',
+    'viz-tag-costs': 'Costs',
+    'viz-tag-group': 'Group',
     'mq-1': 'Plans & sub-plans',
     'mq-2': 'Voting',
     'mq-3': 'Split costs',
@@ -265,7 +323,35 @@ const translations = {
 let currentLang = localStorage.getItem('planit-lang') || 'es';
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const coarsePointer = window.matchMedia('(hover: none), (pointer: coarse)').matches;
-const litePerf = prefersReducedMotion || coarsePointer;
+const connection = navigator.connection;
+const slowConnection =
+  Boolean(connection?.saveData) || /(^2g$)|(^3g$)/.test(connection?.effectiveType || '');
+const litePerf = prefersReducedMotion || coarsePointer || slowConnection;
+
+let legalTextsPromise = null;
+
+function loadLegalTexts() {
+  if (typeof LEGAL_TEXTS !== 'undefined') return Promise.resolve();
+  if (!legalTextsPromise) {
+    legalTextsPromise = new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = './legal.js';
+      script.async = true;
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+  }
+  return legalTextsPromise;
+}
+
+function scheduleWhenIdle(fn, timeout = 1800) {
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(fn, { timeout });
+  } else {
+    setTimeout(fn, 120);
+  }
+}
 
 function throttleRAF(fn) {
   let ticking = false;
@@ -300,6 +386,19 @@ function renderHeroTitle(lang) {
   requestAnimationFrame(() => el.classList.add('is-visible'));
 }
 
+function updateRotatingWidth(word) {
+  const wrap = document.querySelector('.rotating-wrap');
+  if (!wrap || !word) return;
+
+  const measure = document.createElement('span');
+  measure.className = 'rotating-word';
+  measure.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;pointer-events:none';
+  measure.textContent = word;
+  wrap.appendChild(measure);
+  wrap.style.minWidth = `${measure.offsetWidth}px`;
+  wrap.removeChild(measure);
+}
+
 function setLanguage(lang) {
   currentLang = lang;
   localStorage.setItem('planit-lang', lang);
@@ -307,7 +406,18 @@ function setLanguage(lang) {
 
   document.querySelectorAll('[data-lang]').forEach((el) => {
     const key = el.getAttribute('data-lang');
-    if (translations[lang][key]) el.innerHTML = translations[lang][key];
+    const text = translations[lang][key];
+    if (!text) return;
+    if (el.tagName === 'INPUT') {
+      el.setAttribute('aria-label', text);
+    } else {
+      el.innerHTML = text;
+    }
+  });
+
+  document.querySelectorAll('[data-lang-aria]').forEach((el) => {
+    const key = el.getAttribute('data-lang-aria');
+    if (translations[lang][key]) el.setAttribute('aria-label', translations[lang][key]);
   });
 
   document.querySelectorAll('[data-lang-placeholder]').forEach((el) => {
@@ -325,7 +435,13 @@ function setLanguage(lang) {
   bindModalLinks();
 }
 
-function openLegalModal(type) {
+async function openLegalModal(type) {
+  try {
+    await loadLegalTexts();
+  } catch {
+    return;
+  }
+
   const doc = typeof LEGAL_TEXTS !== 'undefined' ? LEGAL_TEXTS[currentLang]?.[type] : null;
   if (!doc) return;
   const modal = document.getElementById('modal');
@@ -377,6 +493,7 @@ function initRotatingText(lang = currentLang) {
   if (index < 0) index = 0;
   el.textContent = words[index];
   el.classList.remove('is-exit', 'is-enter');
+  updateRotatingWidth(words[index]);
 
   if (prefersReducedMotion || words.length < 2) return;
 
@@ -385,6 +502,7 @@ function initRotatingText(lang = currentLang) {
     el.classList.add('is-exit');
     setTimeout(() => {
       el.textContent = words[next];
+      updateRotatingWidth(words[next]);
       el.classList.remove('is-exit');
       el.classList.add('is-enter');
       requestAnimationFrame(() => {
@@ -764,6 +882,8 @@ function initWaitlistForm() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  if (litePerf) document.documentElement.classList.add('perf-lite');
+
   const year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());
 
@@ -776,15 +896,24 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   setLanguage(currentLang);
-  initScrollReveal();
-  initHeroSpotlight();
-  initSpotlightCards();
-  initCounters();
   initScrollEffects();
-  initMarqueePause();
-  initCompareSlider();
   initMobileNav();
-  initPhoneTilt();
   initCookieBanner();
   initWaitlistForm();
+  bindModalLinks();
+
+  scheduleWhenIdle(() => {
+    initScrollReveal();
+    initCounters();
+    initMarqueePause();
+    initCompareSlider();
+  });
+
+  if (!litePerf) {
+    scheduleWhenIdle(() => {
+      initHeroSpotlight();
+      initSpotlightCards();
+      initPhoneTilt();
+    }, 2400);
+  }
 });
