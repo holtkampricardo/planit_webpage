@@ -35,10 +35,21 @@
   <link rel="icon" type="image/png" sizes="192x192" href="./assets/icon-192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="./assets/icon.png">
   <link rel="apple-touch-icon" sizes="192x192" href="./assets/icon-192.png">
+  <link rel="preload" as="image" href="./assets/logo.png" fetchpriority="high">
+  <script>
+    (function () {
+      var lite =
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+        window.matchMedia('(hover: none), (pointer: coarse)').matches;
+      var conn = navigator.connection;
+      if (conn && (conn.saveData || /(^2g$)|(^3g$)/.test(conn.effectiveType || ''))) lite = true;
+      if (lite) document.documentElement.classList.add('perf-lite');
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;600;700&family=Syne:wght@700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;600;700&family=Syne:wght@700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Manrope:wght@400;700&family=Syne:wght@700&display=optional" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Manrope:wght@400;700&family=Syne:wght@700&display=optional"></noscript>
   <link rel="stylesheet" href="./index.css">
   <script type="application/ld+json">
   {
@@ -138,7 +149,7 @@
 <header id="site-header" class="site-header">
   <div class="header-shell">
     <a href="./" class="site-logo-link" aria-label="Planit — inicio">
-      <img src="./assets/logo.png" alt="Planit — app para organizar planes con amigos" class="site-logo" width="200" height="79">
+      <img src="./assets/logo.png" alt="Planit — app para organizar planes con amigos" class="site-logo" width="200" height="79" fetchpriority="high" decoding="async">
     </a>
     <nav class="header-nav" aria-label="Principal">
       <a href="#features" data-lang="nav-features">Funciones</a>
@@ -195,7 +206,7 @@
 
         <p class="hero-subtitle reveal reveal-delay-1">
           <span data-lang="hero-subtitle-prefix">Coordina</span>
-          <span class="rotating-wrap" aria-live="polite"><span id="rotating-word" class="rotating-word">viajes</span></span><span data-lang="hero-subtitle-suffix"> sin caos en el grupo. Vota, divide gastos y no te pierdas nada.</span>
+          <span class="rotating-wrap" aria-live="polite"><span id="rotating-word" class="rotating-word">viajes</span></span> <span data-lang="hero-subtitle-suffix">sin caos en el grupo. Vota, divide gastos y no te pierdas nada.</span>
         </p>
 
         <div class="hero-actions reveal reveal-delay-2">
@@ -236,8 +247,8 @@
               </div>
               <div class="ui-balance">
                 <div class="ui-balance-label" data-lang="ui-plan">Plan activo</div>
-                <div class="ui-balance-value"><span id="balance-counter" data-count="8">0</span> <span style="font-size:0.55em;font-weight:600">amigos</span></div>
-                <div class="ui-balance-delta">Viaje playa · confirmado</div>
+                <div class="ui-balance-value"><span id="balance-counter" data-count="8">0</span> <span style="font-size:0.55em;font-weight:600" data-lang="ui-friends">amigos</span></div>
+                <div class="ui-balance-delta" data-lang="ui-balance-delta">Viaje playa · confirmado</div>
               </div>
               <div class="ui-goal">
                 <div class="ui-goal-top">
@@ -394,9 +405,9 @@
           <h3 data-lang="f2-title">Dividir gastos</h3>
           <p data-lang="f2-desc">Propón actividades y gestiona los gastos de forma transparente y justa.</p>
           <div class="bento-mini-ui mini-assets" aria-hidden="true">
-            <div class="asset-row"><span>Alojamiento</span><span>€320</span></div>
-            <div class="asset-row"><span>Transporte</span><span>€84</span></div>
-            <div class="asset-row"><span>Cena</span><span>€56</span></div>
+            <div class="asset-row"><span data-lang="mock-lodging">Alojamiento</span><span>€320</span></div>
+            <div class="asset-row"><span data-lang="mock-transport">Transporte</span><span>€84</span></div>
+            <div class="asset-row"><span data-lang="mock-dinner">Cena</span><span>€56</span></div>
           </div>
         </article>
 
@@ -407,9 +418,9 @@
           <h3 data-lang="f3-title">Votaciones</h3>
           <p data-lang="f3-desc">Deja que el grupo decida fechas, lugares y actividades democráticamente.</p>
           <div class="bento-mini-ui mini-scenarios" aria-hidden="true">
-            <div class="mini-scenario"><span class="tag tag-opt">15–20 jul</span><span>7 votos</span></div>
-            <div class="mini-scenario"><span class="tag tag-base">22–28 jul</span><span>4 votos</span></div>
-            <div class="mini-scenario"><span class="tag tag-pes">Agosto</span><span>1 voto</span></div>
+            <div class="mini-scenario"><span class="tag tag-opt" data-lang="mock-vote-opt">15–20 jul</span><span data-lang="mock-vote-opt-count">7 votos</span></div>
+            <div class="mini-scenario"><span class="tag tag-base" data-lang="mock-vote-base">22–28 jul</span><span data-lang="mock-vote-base-count">4 votos</span></div>
+            <div class="mini-scenario"><span class="tag tag-pes" data-lang="mock-vote-pes">Agosto</span><span data-lang="mock-vote-pes-count">1 voto</span></div>
           </div>
         </article>
 
@@ -420,7 +431,7 @@
           <h3 data-lang="f4-title">Notificaciones</h3>
           <p data-lang="f4-desc">Recordatorios y avisos para que nadie se pierda un plazo ni una actualización.</p>
           <div class="bento-mini-ui" aria-hidden="true">
-            <div class="mini-goal-row"><span>Voto cierra hoy</span><span>18:00</span></div>
+            <div class="mini-goal-row"><span data-lang="mock-vote-closes">Voto cierra hoy</span><span>18:00</span></div>
             <div class="ui-progress" style="margin-top:0.35rem"><span style="width:72%"></span></div>
           </div>
         </article>
@@ -435,8 +446,8 @@
               <p data-lang="f5-desc">Sugiere ideas y deja que el grupo elija qué hacer en cada momento.</p>
             </div>
             <div class="bento-mini-ui mini-chat" aria-hidden="true">
-              <div class="chat-bubble chat-user">¿Cena o barbacoa?</div>
-              <div class="chat-bubble chat-ai">Barbacoa lidera con 5 votos</div>
+              <div class="chat-bubble chat-user" data-lang="mock-chat-user">¿Cena o barbacoa?</div>
+              <div class="chat-bubble chat-ai" data-lang="mock-chat-ai">Barbacoa lidera con 5 votos</div>
             </div>
           </div>
         </article>
@@ -464,16 +475,16 @@
         <p data-lang="compare-subtitle">Arrastra el control para ver la diferencia entre un chat de grupo y Planit.</p>
       </div>
 
-      <div class="compare-wrap reveal" id="compare-wrap" tabindex="0" role="slider" aria-valuemin="8" aria-valuemax="92" aria-valuenow="50" aria-label="Comparar chat grupal y Planit">
+      <div class="compare-wrap reveal" id="compare-wrap" tabindex="0" role="slider" aria-valuemin="8" aria-valuemax="92" aria-valuenow="50" data-lang-aria="compare-aria" aria-label="Comparar chat grupal y Planit">
         <div class="compare-layer compare-excel" aria-hidden="true">
           <div class="chat-mock">
-            <div class="chat-mock-header">Grupo: Viaje playa 🏖️</div>
-            <div class="chat-msg chat-msg--other">Ana: ¿cuándo vamos?</div>
-            <div class="chat-msg chat-msg--other">Luis: no sé, mirad arriba</div>
-            <div class="chat-msg chat-msg--other">María: ???</div>
-            <div class="chat-msg chat-msg--self">Yo: ¿alguien tiene el Excel?</div>
-            <div class="chat-msg chat-msg--lost">… 47 mensajes después …</div>
-            <div class="chat-msg chat-msg--warn">Todo mezclado · fechas perdidas · gastos sin repartir</div>
+            <div class="chat-mock-header" data-lang="compare-chat-header">Grupo: Viaje playa 🏖️</div>
+            <div class="chat-msg chat-msg--other" data-lang="compare-chat-1">Ana: ¿cuándo vamos?</div>
+            <div class="chat-msg chat-msg--other" data-lang="compare-chat-2">Luis: no sé, mirad arriba</div>
+            <div class="chat-msg chat-msg--other" data-lang="compare-chat-3">María: ???</div>
+            <div class="chat-msg chat-msg--self" data-lang="compare-chat-4">Yo: ¿alguien tiene el Excel?</div>
+            <div class="chat-msg chat-msg--lost" data-lang="compare-chat-lost">… 47 mensajes después …</div>
+            <div class="chat-msg chat-msg--warn" data-lang="compare-chat-warn">Todo mezclado · fechas perdidas · gastos sin repartir</div>
           </div>
         </div>
         <div class="compare-layer compare-app" id="compare-app-layer" aria-hidden="true">
@@ -483,14 +494,14 @@
               <span class="viz-pill" data-lang="viz-pill">Confirmado</span>
             </div>
             <p class="compare-app-label" data-lang="ui-plan">Plan activo</p>
-            <p class="compare-app-value">Viaje playa 2026</p>
+            <p class="compare-app-value" data-lang="compare-app-plan">Viaje playa 2026</p>
             <div class="compare-app-chart">
               <svg viewBox="0 0 200 60" preserveAspectRatio="none"><path d="M0,50 L40,42 L80,35 L120,28 L160,18 L200,10" fill="none" stroke="url(#cmp-grad)" stroke-width="2.5"/><defs><linearGradient id="cmp-grad" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#ff033e"/><stop offset="1" stop-color="#ff6f91"/></linearGradient></defs></svg>
             </div>
             <div class="compare-app-scenarios">
-              <span class="tag tag-opt">15–20 jul · 7 votos</span>
-              <span class="tag tag-base">€124/persona</span>
-              <span class="tag tag-pes">8 confirmados</span>
+              <span class="tag tag-opt" data-lang="compare-tag-dates">15–20 jul · 7 votos</span>
+              <span class="tag tag-base" data-lang="compare-tag-cost">€124/persona</span>
+              <span class="tag tag-pes" data-lang="compare-tag-group">8 confirmados</span>
             </div>
           </div>
         </div>
@@ -528,17 +539,17 @@
             </div>
             <div class="scenario-viz" aria-hidden="true">
               <div class="scenario-row">
-                <span class="tag-opt">Fechas</span>
+                <span class="tag-opt" data-lang="viz-tag-dates">Fechas</span>
                 <div class="scenario-bar"><span class="bar-opt-fill"></span></div>
                 <span data-lang="viz-horizon-val">15–20 jul</span>
               </div>
               <div class="scenario-row">
-                <span class="tag-base">Gastos</span>
+                <span class="tag-base" data-lang="viz-tag-costs">Gastos</span>
                 <div class="scenario-bar"><span class="bar-base-fill"></span></div>
                 <span>€124/p</span>
               </div>
               <div class="scenario-row">
-                <span class="tag-pes">Grupo</span>
+                <span class="tag-pes" data-lang="viz-tag-group">Grupo</span>
                 <div class="scenario-bar"><span class="bar-pes-fill"></span></div>
                 <span data-lang="viz-growth-val">8 amigos</span>
               </div>
@@ -679,7 +690,6 @@
   </div>
 </div>
 
-<script src="./legal.js" defer></script>
 <script src="./site.js" defer></script>
 </body>
 </html>

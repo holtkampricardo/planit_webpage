@@ -66,14 +66,7 @@ body {
 }
 
 body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 9998;
-  opacity: 0.03;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 0.45px, transparent 0.45px);
-  background-size: 3px 3px;
+  display: none;
 }
 
 ::selection {
@@ -152,8 +145,7 @@ body::before {
   padding: 0.65rem 0.85rem 0.65rem 1rem;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: rgba(7, 7, 11, 0.72);
-  backdrop-filter: blur(18px) saturate(1.4);
+  background: rgba(7, 7, 11, 0.92);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28);
 }
 
@@ -217,8 +209,7 @@ body::before {
   padding: 0.65rem;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
-  background: rgba(7, 7, 11, 0.96);
-  backdrop-filter: blur(16px);
+  background: rgba(7, 7, 11, 0.98);
   flex-direction: column;
   gap: 0.25rem;
 }
@@ -344,9 +335,9 @@ body::before {
   content: '';
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.55;
-  animation: aurora-drift 18s ease-in-out infinite alternate;
+  filter: blur(50px);
+  opacity: 0.5;
+  animation: aurora-drift 24s ease-in-out infinite alternate;
 }
 
 .hero-aurora::before {
@@ -379,25 +370,8 @@ body::before {
 }
 
 .hero-beams {
-  position: absolute;
-  inset: 0;
-  opacity: 0.55;
-  pointer-events: none;
+  display: none;
 }
-
-.hero-beams svg {
-  width: 100%;
-  height: 100%;
-}
-
-.beam {
-  stroke-dasharray: 1200;
-  stroke-dashoffset: 1200;
-  animation: beam-draw 8s ease-in-out infinite;
-}
-
-.beam-2 { animation-delay: -2.5s; opacity: 0.7; }
-.beam-3 { animation-delay: -5s; opacity: 0.5; }
 
 .hero-gridlines {
   position: absolute;
@@ -495,11 +469,11 @@ body::before {
 .rotating-wrap {
   display: inline-block;
   position: relative;
-  min-width: 6.5rem;
+  min-width: 0;
   height: 1.35em;
   vertical-align: bottom;
   overflow: hidden;
-  margin-inline: 0.15rem;
+  margin-inline: 0.2em 0.05em;
 }
 
 .rotating-word {
@@ -759,8 +733,7 @@ body::before {
   padding: 0.7rem 0.85rem;
   border-radius: 0.85rem;
   border: 1px solid var(--border-strong);
-  background: rgba(14, 14, 20, 0.88);
-  backdrop-filter: blur(14px);
+  background: rgba(14, 14, 20, 0.96);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
   font-size: 0.72rem;
   animation: float-y 5s ease-in-out infinite;
@@ -1190,7 +1163,6 @@ body::before {
   display: flex;
   width: max-content;
   animation: marquee 32s linear infinite;
-  will-change: transform;
 }
 
 .marquee-section.is-paused .marquee-track {
@@ -1725,7 +1697,6 @@ body::before {
   mask-composite: exclude;
   opacity: 0.65;
   pointer-events: none;
-  animation: beam-spin 4s linear infinite;
 }
 
 .showcase-layout {
@@ -2504,16 +2475,37 @@ button.modal-link {
   contain-intrinsic-size: auto 480px;
 }
 
+/* perf-lite: mobile, slow connection, save-data, reduced motion */
+.perf-lite .header-shell,
+.perf-lite .mobile-nav,
+.perf-lite .legal-header {
+  background: rgba(7, 7, 11, 0.94);
+}
+
+.perf-lite .floating-card {
+  backdrop-filter: none;
+  background: rgba(18, 18, 26, 0.96);
+}
+
+.perf-lite .hero-aurora::before,
+.perf-lite .hero-aurora::after,
+.perf-lite .device-glow,
+.perf-lite .phone-orbit,
+.perf-lite .border-beam-wrap::before,
+.perf-lite .btn-shimmer,
+.perf-lite .btn-shimmer::after {
+  animation: none !important;
+}
+
+.perf-lite .hero-spotlight {
+  display: none;
+}
+
 /* Touch / mobile: lighter GPU effects, same look */
 @media (hover: none), (pointer: coarse) {
-  body::before {
-    display: none;
-  }
-
   .header-shell,
   .mobile-nav,
   .legal-header {
-    backdrop-filter: none;
     background: rgba(7, 7, 11, 0.94);
   }
 
@@ -2530,10 +2522,6 @@ button.modal-link {
   .btn-shimmer,
   .btn-shimmer::after {
     animation: none !important;
-  }
-
-  .hero-beams {
-    display: none;
   }
 }
 
