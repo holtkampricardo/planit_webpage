@@ -4,8 +4,8 @@
   "description": "Planit te ayuda a coordinar viajes, cenas y eventos con amigos. Vota, divide gastos y recibe recordatorios.",
   "start_url": "/",
   "display": "browser",
-  "background_color": "#09080a",
-  "theme_color": "#09080a",
+  "background_color": "#f3f4f6",
+  "theme_color": "#ff033e",
   "lang": "es",
   "icons": [
     {

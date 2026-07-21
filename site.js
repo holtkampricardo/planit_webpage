@@ -846,7 +846,7 @@ function initWaitlistForm() {
     const endpoint = PLANIT_SITE.formspreeEndpoint;
     if (!endpoint || endpoint.includes('YOUR_FORM_ID')) {
       status.textContent = translations[currentLang]['form-config'];
-      status.style.color = 'var(--caution)';
+      status.style.color = '#fff7ed';
       status.classList.remove('hidden');
       return;
     }
@@ -857,7 +857,7 @@ function initWaitlistForm() {
 
     status.classList.remove('hidden');
     status.textContent = '…';
-    status.style.color = 'var(--muted)';
+    status.style.color = 'rgba(255, 255, 255, 0.85)';
 
     try {
       const res = await fetch(endpoint, {
@@ -867,7 +867,7 @@ function initWaitlistForm() {
       });
       if (res.ok) {
         status.textContent = translations[currentLang]['form-success'];
-        status.style.color = 'var(--positive)';
+        status.style.color = '#ecfdf5';
         form.reset();
         document.getElementById('privacy-accepted-field').value = 'no';
         document.getElementById('marketing-consent-field').value = 'no';
@@ -876,7 +876,7 @@ function initWaitlistForm() {
       }
     } catch {
       status.textContent = translations[currentLang]['form-error'];
-      status.style.color = '#fb7185';
+      status.style.color = '#fecdd3';
     }
   });
 }
