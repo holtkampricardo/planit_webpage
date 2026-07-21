@@ -2052,13 +2052,28 @@ body::before {
   gap: 0.55rem;
   margin-top: 0.85rem;
   font-size: 0.84rem;
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--muted);
   line-height: 1.5;
 }
 
-.cta-card .form-check .modal-link {
-  color: #fff;
+.cta-card .form-check {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.cta-card .form-check .modal-link,
+.cta-card .form-footnote .modal-link,
+.cta-card .form-footnote a {
+  color: #ffffff;
   font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1.5px;
+}
+
+.cta-card .form-check .modal-link:hover,
+.cta-card .form-footnote .modal-link:hover,
+.cta-card .form-footnote a:hover {
+  color: #fff5f7;
 }
 
 .form-check input {
@@ -2070,7 +2085,15 @@ body::before {
   margin-top: 0.85rem;
   font-size: 0.74rem;
   line-height: 1.55;
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--muted);
+}
+
+.cta-card .form-footnote {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.site-footer .form-footnote {
+  color: var(--ink-soft);
 }
 
 /* ── Footer ── */
@@ -2197,7 +2220,7 @@ body::before {
 
 .modal-link {
   cursor: pointer;
-  color: var(--accent-soft);
+  color: var(--accent);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
@@ -2210,7 +2233,18 @@ button.modal-link {
 }
 
 .modal-link:hover {
-  color: var(--ink);
+  color: var(--accent-dark);
+}
+
+.footer-nav .modal-link,
+.footer-nav a {
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.footer-nav .modal-link:hover,
+.footer-nav a:hover {
+  color: var(--accent);
 }
 
 #modal-content a {
