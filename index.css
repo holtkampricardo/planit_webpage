@@ -489,7 +489,7 @@ body::before {
 .rotating-wrap {
   display: inline-block;
   position: relative;
-  top: -0.06em;
+  top: 0.12em;
   min-width: 0;
   height: 1.2em;
   line-height: 1.2em;
@@ -854,7 +854,6 @@ body::before {
 .compare-wrap {
   position: relative;
   height: 420px;
-  height: min(420px, 72vw);
   border-radius: var(--radius-xl);
   overflow: hidden;
   border: 1px solid var(--border);
@@ -869,21 +868,22 @@ body::before {
   position: absolute;
   top: 0;
   bottom: 0;
+  overflow: hidden;
   pointer-events: none;
 }
 
 .compare-excel {
   left: 0;
-  right: 0;
+  width: var(--compare-pct, 50%);
   background: #1a1a22;
   z-index: 1;
 }
 
 .compare-app {
-  z-index: 2;
   left: var(--compare-pct, 50%);
-  width: calc(100% - var(--compare-pct, 50%));
-  right: auto;
+  right: 0;
+  width: auto;
+  z-index: 2;
   background: linear-gradient(160deg, #12121a, #0a0a10);
   color: #faf4f5;
   --ink: #faf4f5;
@@ -954,6 +954,10 @@ body::before {
 }
 
 .chat-mock {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   height: 100%;
   padding: 1.25rem;
   display: flex;
@@ -961,6 +965,7 @@ body::before {
   gap: 0.55rem;
   font-size: 0.76rem;
   line-height: 1.4;
+  overflow: hidden;
 }
 
 .chat-mock-header {
@@ -973,17 +978,19 @@ body::before {
 }
 
 .chat-msg {
-  max-width: 88%;
+  max-width: min(88%, 100%);
+  box-sizing: border-box;
   padding: 0.55rem 0.7rem;
   border-radius: 0.75rem;
   background: rgba(255, 255, 255, 0.05);
   color: #c4c4cc;
   border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow-wrap: anywhere;
 }
 
 .chat-msg--self {
   align-self: flex-start;
-  margin-right: 1.5rem;
+  margin-right: 0;
   background: rgba(255, 255, 255, 0.14);
   color: #fecdd3;
   border-color: rgba(255, 3, 62, 0.2);
@@ -1009,11 +1016,15 @@ body::before {
 }
 
 .compare-app-ui {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
   height: 100%;
   padding: 1.75rem 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.55rem;
+  min-width: 0;
   min-height: 0;
   overflow: hidden;
 }
@@ -1111,20 +1122,74 @@ body::before {
 }
 
 @media (max-width: 560px) {
-  .compare-plan-mock {
-    grid-template-columns: 1fr auto;
-    gap: 0.55rem;
-    padding: 0.6rem 0.65rem;
+  .compare-wrap {
+    height: min(540px, 82svh);
   }
 
-  .compare-plan-mono {
-    width: 72px;
-    height: 72px;
+  .compare-app-ui {
+    padding: 1rem 0.75rem 1.1rem;
+    gap: 0.35rem;
+  }
+
+  .compare-app-value {
+    font-size: 1.05rem;
+  }
+
+  .compare-app-label {
+    margin-top: 0.1rem;
   }
 
   .compare-vote-row {
-    grid-template-columns: 3.6rem 1fr 1.2rem;
-    font-size: 0.68rem;
+    grid-template-columns: 3.2rem minmax(0, 1fr) 1rem;
+    gap: 0.3rem;
+    font-size: 0.64rem;
+  }
+
+  .compare-app-scenarios {
+    gap: 0.3rem;
+  }
+
+  .compare-app-scenarios .tag {
+    font-size: 0.6rem;
+    padding: 0.25rem 0.45rem;
+  }
+
+  .chat-mock {
+    padding: 0.9rem 0.7rem;
+    gap: 0.35rem;
+    font-size: 0.7rem;
+  }
+
+  .chat-msg {
+    padding: 0.4rem 0.55rem;
+    max-width: 100%;
+  }
+
+  .compare-label {
+    top: 0.55rem;
+    font-size: 0.6rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .compare-label--left { left: 0.55rem; }
+  .compare-label--right { right: 0.55rem; }
+
+  .compare-handle-knob {
+    width: 2.15rem;
+    height: 2.15rem;
+  }
+}
+
+/* Hide compare monkey on phones/tablets — it steals width and clips the vote UI */
+@media (max-width: 900px) {
+  .compare-plan-mock {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.45rem;
+    padding: 0.55rem 0.65rem;
+  }
+
+  .compare-plan-mono {
+    display: none !important;
   }
 }
 
@@ -3220,6 +3285,29 @@ button.modal-link {
   overflow: visible;
 }
 
+@media (max-width: 1023px) {
+  .hero {
+    align-items: flex-start;
+    padding: 6.25rem 1rem 2.5rem;
+    min-height: auto;
+  }
+
+  .hero-layout {
+    gap: 1.15rem;
+  }
+
+  .hero-mascot {
+    min-height: 0;
+    margin-top: -0.35rem;
+  }
+
+  .hero-mascot-img,
+  .hero-mascot-anim {
+    width: min(100%, 400px);
+    max-height: min(46vh, 400px);
+  }
+}
+
 .hero-mascot-glow {
   display: none;
 }
@@ -3238,6 +3326,13 @@ button.modal-link {
   object-fit: contain;
   object-position: center bottom;
   aspect-ratio: auto;
+  will-change: transform;
+  animation: mascot-float 3.6s ease-in-out infinite;
+}
+
+@keyframes mascot-float {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -12px, 0); }
 }
 
 .hero-mascot-img--static {
@@ -3251,7 +3346,19 @@ button.modal-link {
 
   .hero-mascot-img--static {
     display: block;
+    animation: none;
   }
+
+  .hero-mascot-img,
+  .hero-mascot-anim {
+    animation: none;
+  }
+}
+
+.perf-lite .hero-mascot-img,
+.perf-lite .hero-mascot-anim {
+  animation: none;
+  will-change: auto;
 }
 
 .mono-illust {
