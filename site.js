@@ -37,26 +37,61 @@ const translations = {
     'mock-lodging': 'Alojamiento',
     'mock-transport': 'Transporte',
     'mock-dinner': 'Cena',
+    'mock-plan-lodging-meta': '15–20 jul · Casa playa',
+    'mock-plan-transport-meta': 'Ida y vuelta · 4 plazas',
+    'mock-plan-dinner-meta': 'Sábado 21:00 · Votando',
+    'mock-plan-activity': 'Paddle surf',
+    'mock-plan-activity-meta': 'Domingo · Ana',
+    'mock-plan-done': 'Hecho',
+    'mock-plan-open': 'Pendiente',
+    'mock-plan-voting': 'En voto',
     'mock-vote-opt': '15–20 jul',
     'mock-vote-opt-count': '7 votos',
     'mock-vote-base': '22–28 jul',
     'mock-vote-base-count': '4 votos',
     'mock-vote-pes': 'Agosto',
     'mock-vote-pes-count': '1 voto',
+    'mock-vote-extra': '1–7 ago',
+    'mock-vote-extra-count': '2 votos',
+    'mock-vote-extra2': 'Septiembre',
+    'mock-vote-extra2-count': '0 votos',
     'mock-vote-closes': 'Voto cierra hoy',
+    'mock-notif-1-title': 'Encuestas y decisiones',
+    'mock-notif-1-body': 'Luis votó en las fechas del plan',
+    'mock-notif-2-title': 'Gastos',
+    'mock-notif-2-body': 'María añadió un gasto · €48',
+    'mock-notif-3-title': 'Actividades',
+    'mock-notif-3-body': 'Ana añadió «Paddle surf» al plan',
+    'mock-notif-4-title': 'Recordatorio',
+    'mock-notif-4-body': 'Fin de semana en la playa es pronto',
     'mock-chat-user': '¿Cena o barbacoa?',
     'mock-chat-ai': 'Barbacoa lidera con 5 votos',
+    'mock-act-1': 'Barbacoa en la playa',
+    'mock-act-1-votes': '5 votos',
+    'mock-act-2': 'Paddle surf',
+    'mock-act-2-votes': '3 votos',
+    'mock-act-3': 'Paseo al atardecer',
+    'mock-act-3-votes': '1 voto',
+    'mock-group-1': 'Organizadora',
+    'mock-group-2': 'Participante',
+    'mock-group-3': 'Participante',
     'compare-chat-header': 'Grupo: Viaje playa 🏖️',
     'compare-chat-1': 'Ana: ¿cuándo vamos?',
     'compare-chat-2': 'Luis: no sé, mirad arriba',
     'compare-chat-3': 'María: ???',
-    'compare-chat-4': 'Yo: ¿alguien tiene el Excel?',
+    'compare-chat-4': 'Yo: ¿alguien tiene Planit?',
     'compare-chat-lost': '… 47 mensajes después …',
     'compare-chat-warn': 'Todo mezclado · fechas perdidas · gastos sin repartir',
-    'compare-app-plan': 'Viaje playa 2026',
-    'compare-tag-dates': '15–20 jul · 7 votos',
+    'compare-app-plan': 'Fin de semana en la playa',
+    'compare-tag-dates': 'Fecha ganadora · 15–20 jul',
     'compare-tag-cost': '€124/persona',
     'compare-tag-group': '8 confirmados',
+    'compare-vote-a': '15–20 jul',
+    'compare-vote-a-n': '7',
+    'compare-vote-b': '22–28 jul',
+    'compare-vote-b-n': '4',
+    'compare-vote-c': 'Agosto',
+    'compare-vote-c-n': '1',
     'viz-tag-dates': 'Fechas',
     'viz-tag-costs': 'Gastos',
     'viz-tag-group': 'Grupo',
@@ -114,6 +149,10 @@ const translations = {
     'section-showcase': 'Vista previa',
     'showcase-title': 'Preparando el lanzamiento',
     'showcase-desc': 'Planit llegará pronto a iOS y Android. La forma más fácil de organizar planes con amigos.',
+    'showcase-status-badge': 'En marcha',
+    'showcase-status-caption': 'Estamos en ello',
+    'showcase-ios': 'iOS',
+    'showcase-android': 'Android',
     'perk-1': 'Sin hojas de cálculo',
     'perk-2': 'Sin mensajes perdidos',
     'perk-3': 'Todo el grupo alineado',
@@ -191,26 +230,61 @@ const translations = {
     'mock-lodging': 'Lodging',
     'mock-transport': 'Transport',
     'mock-dinner': 'Dinner',
+    'mock-plan-lodging-meta': 'Jul 15–20 · Beach house',
+    'mock-plan-transport-meta': 'Round trip · 4 seats',
+    'mock-plan-dinner-meta': 'Sat 9:00 PM · Voting',
+    'mock-plan-activity': 'Paddle surf',
+    'mock-plan-activity-meta': 'Sunday · Ana',
+    'mock-plan-done': 'Done',
+    'mock-plan-open': 'Pending',
+    'mock-plan-voting': 'Voting',
     'mock-vote-opt': 'Jul 15–20',
     'mock-vote-opt-count': '7 votes',
     'mock-vote-base': 'Jul 22–28',
     'mock-vote-base-count': '4 votes',
     'mock-vote-pes': 'August',
     'mock-vote-pes-count': '1 vote',
+    'mock-vote-extra': 'Aug 1–7',
+    'mock-vote-extra-count': '2 votes',
+    'mock-vote-extra2': 'September',
+    'mock-vote-extra2-count': '0 votes',
     'mock-vote-closes': 'Vote closes today',
+    'mock-notif-1-title': 'Polls & decisions',
+    'mock-notif-1-body': 'Luis voted on the plan dates',
+    'mock-notif-2-title': 'Expenses',
+    'mock-notif-2-body': 'María added an expense · €48',
+    'mock-notif-3-title': 'Activities',
+    'mock-notif-3-body': 'Ana added “Paddle surf” to the plan',
+    'mock-notif-4-title': 'Reminder',
+    'mock-notif-4-body': 'Beach weekend is coming up soon',
     'mock-chat-user': 'Dinner or BBQ?',
     'mock-chat-ai': 'BBQ leads with 5 votes',
+    'mock-act-1': 'Beach BBQ',
+    'mock-act-1-votes': '5 votes',
+    'mock-act-2': 'Paddle surf',
+    'mock-act-2-votes': '3 votes',
+    'mock-act-3': 'Sunset walk',
+    'mock-act-3-votes': '1 vote',
+    'mock-group-1': 'Organizer',
+    'mock-group-2': 'Participant',
+    'mock-group-3': 'Participant',
     'compare-chat-header': 'Group: Beach trip 🏖️',
     'compare-chat-1': 'Ana: when are we going?',
     'compare-chat-2': 'Luis: idk, scroll up',
     'compare-chat-3': 'María: ???',
-    'compare-chat-4': 'Me: does anyone have the spreadsheet?',
+    'compare-chat-4': 'Me: does anyone have Planit?',
     'compare-chat-lost': '… 47 messages later …',
     'compare-chat-warn': 'All mixed up · lost dates · costs not split',
-    'compare-app-plan': 'Beach trip 2026',
-    'compare-tag-dates': 'Jul 15–20 · 7 votes',
+    'compare-app-plan': 'Beach weekend',
+    'compare-tag-dates': 'Winning date · Jul 15–20',
     'compare-tag-cost': '€124/person',
     'compare-tag-group': '8 confirmed',
+    'compare-vote-a': 'Jul 15–20',
+    'compare-vote-a-n': '7',
+    'compare-vote-b': 'Jul 22–28',
+    'compare-vote-b-n': '4',
+    'compare-vote-c': 'August',
+    'compare-vote-c-n': '1',
     'viz-tag-dates': 'Dates',
     'viz-tag-costs': 'Costs',
     'viz-tag-group': 'Group',
@@ -268,6 +342,10 @@ const translations = {
     'section-showcase': 'Preview',
     'showcase-title': 'Launch coming soon',
     'showcase-desc': 'Planit is heading to iOS and Android. The easiest way to organize plans with friends.',
+    'showcase-status-badge': 'In progress',
+    'showcase-status-caption': 'Working on it',
+    'showcase-ios': 'iOS',
+    'showcase-android': 'Android',
     'perk-1': 'No spreadsheets',
     'perk-2': 'No lost messages',
     'perk-3': 'Whole group aligned',
@@ -587,19 +665,7 @@ function initCompareSlider() {
 }
 
 function initHeroSpotlight() {
-  const hero = document.querySelector('.hero');
-  const spotlight = document.getElementById('hero-spotlight');
-  if (!hero || !spotlight || litePerf) return;
-
-  const onMove = throttleRAF((e) => {
-    const rect = hero.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    spotlight.style.setProperty('--spot-x', `${x}%`);
-    spotlight.style.setProperty('--spot-y', `${y}%`);
-  });
-
-  hero.addEventListener('mousemove', onMove, { passive: true });
+  /* Mouse-follow spotlight removed */
 }
 
 function initSpotlightCards() {
@@ -699,16 +765,35 @@ function initScrollEffects() {
     })
     .filter(Boolean);
 
-  let lastY = window.scrollY;
   let ticking = false;
+  let hideTimer = null;
+  const SHOW_DELAY_MS = 180;
+
+  const showHeader = () => {
+    if (header) header.classList.remove('is-hidden');
+  };
 
   const update = () => {
     ticking = false;
     const y = window.scrollY;
 
     if (header) {
-      header.classList.toggle('is-hidden', y > lastY && y > 120);
-      lastY = y;
+      // Always use the light scrolled chrome (preferred over hero-transparent style)
+      header.classList.add('is-scrolled');
+
+      // Hide only while scrolling; show again when scroll stops.
+      // Keep visible at the very top of the page.
+      if (y <= 56) {
+        header.classList.remove('is-hidden');
+        if (hideTimer) {
+          clearTimeout(hideTimer);
+          hideTimer = null;
+        }
+      } else {
+        header.classList.add('is-hidden');
+        if (hideTimer) clearTimeout(hideTimer);
+        hideTimer = setTimeout(showHeader, SHOW_DELAY_MS);
+      }
     }
 
     if (bar) {

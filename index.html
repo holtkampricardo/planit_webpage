@@ -35,7 +35,8 @@
   <link rel="icon" type="image/png" sizes="192x192" href="./assets/icon-192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="./assets/icon.png">
   <link rel="apple-touch-icon" sizes="192x192" href="./assets/icon-192.png">
-  <link rel="preload" as="image" href="./assets/logo.png" fetchpriority="high">
+  <link rel="preload" as="image" href="./assets/logo-white.png" fetchpriority="high">
+  <link rel="preload" as="image" href="./assets/monos/monos-hola.webp?v=20260722flat" fetchpriority="high">
   <script>
     (function () {
       var lite =
@@ -50,7 +51,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Manrope:wght@400;700&family=Syne:wght@700&display=optional" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Manrope:wght@400;700&family=Syne:wght@700&display=optional"></noscript>
-  <link rel="stylesheet" href="./index.css?v=20260721b">
+  <link rel="stylesheet" href="./index.css?v=20260722flat">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -146,10 +147,11 @@
 <body>
 <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
-<header id="site-header" class="site-header">
+<header id="site-header" class="site-header is-scrolled">
   <div class="header-shell">
     <a href="./" class="site-logo-link" aria-label="Planit — inicio">
-      <img src="./assets/logo.png" alt="Planit — app para organizar planes con amigos" class="site-logo" width="200" height="79" fetchpriority="high" decoding="async">
+      <img src="./assets/logo-white.png" alt="Planit — app para organizar planes con amigos" class="site-logo site-logo--on-brand" width="200" height="80" fetchpriority="high" decoding="async">
+      <img src="./assets/logo-pink.png" alt="" class="site-logo site-logo--on-light" width="200" height="80" decoding="async" aria-hidden="true">
     </a>
     <nav class="header-nav" aria-label="Principal">
       <a href="#features" data-lang="nav-features">Funciones</a>
@@ -176,7 +178,7 @@
 </header>
 
 <main>
-  <section class="hero" id="top">
+  <section class="hero band-brand" id="top">
     <div class="hero-aurora" aria-hidden="true"></div>
     <div class="hero-gridlines" aria-hidden="true"></div>
     <div class="hero-beams" aria-hidden="true">
@@ -197,11 +199,6 @@
 
     <div class="container hero-layout">
       <div class="hero-copy">
-        <div class="hero-badge reveal">
-          <span class="hero-badge-pulse" aria-hidden="true"></span>
-          <span data-lang="hero-badge">Planit · Planificación social</span>
-        </div>
-
         <h1 class="hero-title" id="hero-title" data-lang-words="hero-title">Organiza planes con amigos de forma fácil y divertida</h1>
 
         <p class="hero-subtitle reveal reveal-delay-1">
@@ -213,74 +210,25 @@
           <a href="#cta" class="btn-primary btn-shimmer" data-lang="notify-me-cta">Avísame cuando esté disponible</a>
           <a href="#features" class="btn-ghost" data-lang="hero-explore">Explorar funciones</a>
         </div>
-
-        <div class="hero-meta reveal reveal-delay-3">
-          <span class="meta-chip">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
-            <span data-lang="hero-coming">Próximamente en iOS y Android</span>
-          </span>
-          <span class="meta-chip">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-            <span data-lang="hero-vote">Votaciones en grupo</span>
-          </span>
-        </div>
       </div>
 
-      <div class="hero-device reveal reveal-delay-2" aria-hidden="true">
-        <div class="phone-orbit"></div>
-        <div class="device-glow"></div>
-        <div class="floating-card floating-card--a">
-          <span data-lang="float-plan">Viaje a la playa</span>
-          <strong data-lang="float-votes">7 votos</strong>
-        </div>
-        <div class="floating-card floating-card--b">
-          <span data-lang="ui-cost">Gastos compartidos</span>
-          <strong>€124</strong>
-        </div>
-        <div class="phone-frame" id="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <div class="phone-ui">
-              <div class="ui-header">
-                <img src="./assets/logo.png" alt="Planit" class="ui-brand-logo" width="80" height="32" decoding="async">
-                <span>2026</span>
-              </div>
-              <div class="ui-balance">
-                <div class="ui-balance-label" data-lang="ui-plan">Plan activo</div>
-                <div class="ui-balance-value"><span id="balance-counter" data-count="8">0</span> <span style="font-size:0.55em;font-weight:600" data-lang="ui-friends">amigos</span></div>
-                <div class="ui-balance-delta" data-lang="ui-balance-delta">Viaje playa · confirmado</div>
-              </div>
-              <div class="ui-goal">
-                <div class="ui-goal-top">
-                  <span data-lang="ui-vote">¿Mejores fechas?</span>
-                  <span>7/8</span>
-                </div>
-                <div class="ui-progress"><span style="width:87%"></span></div>
-              </div>
-              <div class="ui-chart-line">
-                <svg viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden="true">
-                  <defs>
-                    <linearGradient id="chart-fill" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="rgba(255,3,62,0.35)"/>
-                      <stop offset="100%" stop-color="rgba(255,3,62,0)"/>
-                    </linearGradient>
-                    <linearGradient id="beam-grad-phone" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stop-color="#ff033e"/>
-                      <stop offset="100%" stop-color="#ff6f91"/>
-                    </linearGradient>
-                  </defs>
-                  <path class="chart-area" d="M0,45 L40,40 L80,35 L120,28 L160,22 L200,18 L200,60 L0,60 Z" fill="url(#chart-fill)"/>
-                  <path class="chart-stroke" d="M0,45 L40,40 L80,35 L120,28 L160,22 L200,18" fill="none" stroke="url(#beam-grad-phone)" stroke-width="2.5" stroke-linecap="round"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="hero-mascot reveal reveal-delay-1" aria-label="Mono Planit saludando">
+        <div class="hero-mascot-glow" aria-hidden="true"></div>
+        <img
+          src="./assets/monos/monos-hola.webp?v=20260722flat"
+          alt=""
+          class="hero-mascot-anim"
+          width="3840"
+          height="3840"
+          decoding="async"
+          fetchpriority="high"
+        >
+        <img src="./assets/monos/welcome.png?v=20260722flat" alt="" class="hero-mascot-img hero-mascot-img--static" width="3840" height="3840" decoding="async">
       </div>
     </div>
   </section>
 
-  <section class="marquee-section" aria-hidden="true">
+  <section class="marquee-section band-brand" aria-hidden="true">
     <div class="marquee-row">
       <div class="marquee-track">
         <div class="marquee-group">
@@ -323,7 +271,7 @@
     </div>
   </section>
 
-  <section class="principles-section" aria-label="Principios">
+  <section class="principles-section band-brand" aria-label="Principios">
     <div class="container principles-grid">
       <div class="principle-pill reveal"><span class="principle-icon">◆</span><span data-lang="principle-1">Fácil de usar</span></div>
       <div class="principle-pill reveal reveal-delay-1"><span class="principle-icon">◆</span><span data-lang="principle-2">Grupo al centro</span></div>
@@ -332,7 +280,7 @@
     </div>
   </section>
 
-  <section class="stats-section">
+  <section class="stats-section band-brand">
     <div class="container stats-grid">
       <article class="stat-card spotlight-card reveal">
         <div class="stat-value"><span data-count="4">0</span></div>
@@ -349,7 +297,7 @@
     </div>
   </section>
 
-  <section class="process-section" id="process">
+  <section class="process-section band-brand" id="process">
     <div class="container">
       <div class="section-heading reveal">
         <p class="section-label"><span data-lang="section-process">Cómo funciona</span></p>
@@ -360,22 +308,25 @@
           <span class="process-num">01</span>
           <h3 data-lang="step-1-title">Crea el plan</h3>
           <p data-lang="step-1-desc">Define el evento principal y añade subplanes: alojamiento, transporte, actividades y más.</p>
+          <img src="./assets/monos/plans.png?v=20260722restore" alt="" class="mono-illust" width="3840" height="2818" loading="lazy" decoding="async">
         </li>
         <li class="process-step spotlight-card reveal reveal-delay-1">
           <span class="process-num">02</span>
           <h3 data-lang="step-2-title">Invita y propón</h3>
           <p data-lang="step-2-desc">Añade amigos, propone opciones y reparte costes de forma transparente.</p>
+          <img src="./assets/monos/invite.png?v=20260722restore" alt="" class="mono-illust" width="3840" height="2046" loading="lazy" decoding="async">
         </li>
         <li class="process-step spotlight-card reveal reveal-delay-2">
           <span class="process-num">03</span>
           <h3 data-lang="step-3-title">Vota y confirma</h3>
           <p data-lang="step-3-desc">El grupo vota fechas y actividades. Recibe recordatorios y mantén todo al día.</p>
+          <img src="./assets/monos/done.png?v=20260722restore" alt="" class="mono-illust" width="3200" height="3840" loading="lazy" decoding="async">
         </li>
       </ol>
     </div>
   </section>
 
-  <section id="features" class="features-section">
+  <section id="features" class="features-section band-brand">
     <div class="container">
       <div class="section-heading reveal">
         <p class="section-label"><span data-lang="section-features">Funciones</span></p>
@@ -384,17 +335,55 @@
       </div>
 
       <div class="bento-grid">
-        <article class="bento-card bento-card--hero spotlight-card gradient-border reveal">
+        <article class="bento-card bento-card--hero spotlight-card reveal">
           <div class="bento-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg>
           </div>
           <h3 data-lang="f1-title">Planes y subplanes</h3>
           <p data-lang="f1-desc">Organiza cada detalle, del evento principal a las tareas más pequeñas.</p>
-          <div class="bento-mini-ui">
-            <div class="mini-chart" aria-hidden="true">
-              <span style="height:55%"></span><span style="height:72%"></span><span style="height:48%"></span>
-              <span style="height:88%"></span><span style="height:62%"></span><span style="height:95%"></span>
+          <div class="bento-mini-ui mini-plan" aria-hidden="true">
+            <div class="mini-plan-head">
+              <div>
+                <span class="mini-plan-label" data-lang="ui-plan">Plan activo</span>
+                <strong data-lang="compare-app-plan">Fin de semana en la playa</strong>
+              </div>
+              <span class="viz-pill" data-lang="viz-pill">Confirmado</span>
             </div>
+            <ul class="mini-plan-list">
+              <li class="mini-plan-item">
+                <span class="mini-plan-icon" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10h18"/><path d="M5 6h14v14H5z"/><path d="M9 6V4h6v2"/></svg>
+                </span>
+                <div class="mini-plan-body">
+                  <strong data-lang="mock-lodging">Alojamiento</strong>
+                  <span data-lang="mock-plan-lodging-meta">15–20 jul · Casa playa</span>
+                </div>
+                <em>€320</em>
+                <span class="mini-plan-status is-done" data-lang="mock-plan-done">Hecho</span>
+              </li>
+              <li class="mini-plan-item">
+                <span class="mini-plan-icon" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2l.6-2.3a1 1 0 0 0-.4-1.1L17 10H5L3 14v3h2"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="17.5" r="2.5"/></svg>
+                </span>
+                <div class="mini-plan-body">
+                  <strong data-lang="mock-transport">Transporte</strong>
+                  <span data-lang="mock-plan-transport-meta">Ida y vuelta · 4 plazas</span>
+                </div>
+                <em>€96</em>
+                <span class="mini-plan-status is-open" data-lang="mock-plan-open">Pendiente</span>
+              </li>
+              <li class="mini-plan-item">
+                <span class="mini-plan-icon" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v3"/><path d="M5.5 9h13"/><path d="M7 9v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9"/><path d="M9 13h6"/></svg>
+                </span>
+                <div class="mini-plan-body">
+                  <strong data-lang="mock-dinner">Cena</strong>
+                  <span data-lang="mock-plan-dinner-meta">Sábado 21:00 · Votando</span>
+                </div>
+                <em>€28</em>
+                <span class="mini-plan-status is-vote" data-lang="mock-plan-voting">En voto</span>
+              </li>
+            </ul>
           </div>
         </article>
 
@@ -404,11 +393,7 @@
           </div>
           <h3 data-lang="f2-title">Dividir gastos</h3>
           <p data-lang="f2-desc">Propón actividades y gestiona los gastos de forma transparente y justa.</p>
-          <div class="bento-mini-ui mini-assets" aria-hidden="true">
-            <div class="asset-row"><span data-lang="mock-lodging">Alojamiento</span><span>€320</span></div>
-            <div class="asset-row"><span data-lang="mock-transport">Transporte</span><span>€84</span></div>
-            <div class="asset-row"><span data-lang="mock-dinner">Cena</span><span>€56</span></div>
-          </div>
+          <img src="./assets/monos/collaborate.png?v=20260722restore" alt="" class="mono-illust" width="3840" height="2688" loading="lazy" decoding="async">
         </article>
 
         <article class="bento-card bento-card--activos spotlight-card reveal">
@@ -421,6 +406,8 @@
             <div class="mini-scenario"><span class="tag tag-opt" data-lang="mock-vote-opt">15–20 jul</span><span data-lang="mock-vote-opt-count">7 votos</span></div>
             <div class="mini-scenario"><span class="tag tag-base" data-lang="mock-vote-base">22–28 jul</span><span data-lang="mock-vote-base-count">4 votos</span></div>
             <div class="mini-scenario"><span class="tag tag-pes" data-lang="mock-vote-pes">Agosto</span><span data-lang="mock-vote-pes-count">1 voto</span></div>
+            <div class="mini-scenario"><span class="tag tag-base" data-lang="mock-vote-extra">1–7 ago</span><span data-lang="mock-vote-extra-count">2 votos</span></div>
+            <div class="mini-scenario"><span class="tag tag-pes" data-lang="mock-vote-extra2">Septiembre</span><span data-lang="mock-vote-extra2-count">0 votos</span></div>
           </div>
         </article>
 
@@ -430,24 +417,52 @@
           </div>
           <h3 data-lang="f4-title">Notificaciones</h3>
           <p data-lang="f4-desc">Recordatorios y avisos para que nadie se pierda un plazo ni una actualización.</p>
-          <div class="bento-mini-ui" aria-hidden="true">
-            <div class="mini-goal-row"><span data-lang="mock-vote-closes">Voto cierra hoy</span><span>18:00</span></div>
-            <div class="ui-progress" style="margin-top:0.35rem"><span style="width:72%"></span></div>
+          <div class="bento-mini-ui mini-notifs" aria-hidden="true">
+            <div class="mini-notif">
+              <span class="mini-notif-dot" aria-hidden="true"></span>
+              <div>
+                <strong data-lang="mock-notif-1-title">Encuestas y decisiones</strong>
+                <span data-lang="mock-notif-1-body">Luis votó en las fechas del plan</span>
+              </div>
+            </div>
+            <div class="mini-notif">
+              <span class="mini-notif-dot mini-notif-dot--soft" aria-hidden="true"></span>
+              <div>
+                <strong data-lang="mock-notif-2-title">Gastos</strong>
+                <span data-lang="mock-notif-2-body">María añadió un gasto · €48</span>
+              </div>
+            </div>
+            <div class="mini-notif">
+              <span class="mini-notif-dot mini-notif-dot--soft" aria-hidden="true"></span>
+              <div>
+                <strong data-lang="mock-notif-3-title">Actividades</strong>
+                <span data-lang="mock-notif-3-body">Ana añadió «Paddle surf» al plan</span>
+              </div>
+            </div>
           </div>
         </article>
 
         <article class="bento-card bento-card--coach spotlight-card reveal">
-          <div class="bento-wide-inner">
-            <div>
-              <div class="bento-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v4"/><path d="m16.2 7.8 2.9-2.9"/><path d="M18 12h4"/><path d="m16.2 16.2 2.9 2.9"/><path d="M12 18v4"/><path d="m4.9 19.1 2.9-2.9"/><path d="M2 12h4"/><path d="m4.9 4.9 2.9 2.9"/></svg>
-              </div>
-              <h3 data-lang="f5-title">Actividades</h3>
-              <p data-lang="f5-desc">Sugiere ideas y deja que el grupo elija qué hacer en cada momento.</p>
+          <div class="bento-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v4"/><path d="m16.2 7.8 2.9-2.9"/><path d="M18 12h4"/><path d="m16.2 16.2 2.9 2.9"/><path d="M12 18v4"/><path d="m4.9 19.1 2.9-2.9"/><path d="M2 12h4"/><path d="m4.9 4.9 2.9 2.9"/></svg>
+          </div>
+          <h3 data-lang="f5-title">Actividades</h3>
+          <p data-lang="f5-desc">Sugiere ideas y deja que el grupo elija qué hacer en cada momento.</p>
+          <div class="bento-mini-ui mini-activities" aria-hidden="true">
+            <div class="mini-activity">
+              <strong data-lang="mock-act-1">Barbacoa en la playa</strong>
+              <span data-lang="mock-act-1-votes">5 votos</span>
+              <div class="mini-activity-bar"><i style="--p:83%"></i></div>
             </div>
-            <div class="bento-mini-ui mini-chat" aria-hidden="true">
-              <div class="chat-bubble chat-user" data-lang="mock-chat-user">¿Cena o barbacoa?</div>
-              <div class="chat-bubble chat-ai" data-lang="mock-chat-ai">Barbacoa lidera con 5 votos</div>
+            <div class="mini-activity">
+              <strong data-lang="mock-act-2">Paddle surf</strong>
+              <span data-lang="mock-act-2-votes">3 votos</span>
+              <div class="mini-activity-bar"><i style="--p:50%"></i></div>
+            </div>
+            <div class="mini-activity">
+              <strong data-lang="mock-act-3">Paseo al atardecer</strong>
+              <span data-lang="mock-act-3-votes">1 voto</span>
+              <div class="mini-activity-bar"><i style="--p:17%"></i></div>
             </div>
           </div>
         </article>
@@ -458,16 +473,35 @@
           </div>
           <h3 data-lang="f6-title">Grupo conectado</h3>
           <p data-lang="f6-desc">Todos ven el mismo plan, las votaciones y el estado de cada tarea.</p>
-          <div class="privacy-badge" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            <span data-lang="group-badge">En vivo</span>
+          <div class="bento-mini-ui mini-group" aria-hidden="true">
+            <div class="mini-group-row">
+              <span class="mini-avatar" style="--av:#ff033e">A</span>
+              <div>
+                <strong>Ana</strong>
+                <span data-lang="mock-group-1">Organizadora</span>
+              </div>
+            </div>
+            <div class="mini-group-row">
+              <span class="mini-avatar" style="--av:#7c6cff">L</span>
+              <div>
+                <strong>Luis</strong>
+                <span data-lang="mock-group-2">Participante</span>
+              </div>
+            </div>
+            <div class="mini-group-row">
+              <span class="mini-avatar" style="--av:#10b981">M</span>
+              <div>
+                <strong>María</strong>
+                <span data-lang="mock-group-3">Participante</span>
+              </div>
+            </div>
           </div>
         </article>
       </div>
     </div>
   </section>
 
-  <section id="compare" class="compare-section">
+  <section id="compare" class="compare-section band-brand">
     <div class="container">
       <div class="section-heading reveal">
         <p class="section-label"><span data-lang="section-compare">Por qué Planit</span></p>
@@ -482,7 +516,7 @@
             <div class="chat-msg chat-msg--other" data-lang="compare-chat-1">Ana: ¿cuándo vamos?</div>
             <div class="chat-msg chat-msg--other" data-lang="compare-chat-2">Luis: no sé, mirad arriba</div>
             <div class="chat-msg chat-msg--other" data-lang="compare-chat-3">María: ???</div>
-            <div class="chat-msg chat-msg--self" data-lang="compare-chat-4">Yo: ¿alguien tiene el Excel?</div>
+            <div class="chat-msg chat-msg--self" data-lang="compare-chat-4">Yo: ¿alguien tiene Planit?</div>
             <div class="chat-msg chat-msg--lost" data-lang="compare-chat-lost">… 47 mensajes después …</div>
             <div class="chat-msg chat-msg--warn" data-lang="compare-chat-warn">Todo mezclado · fechas perdidas · gastos sin repartir</div>
           </div>
@@ -494,12 +528,29 @@
               <span class="viz-pill" data-lang="viz-pill">Confirmado</span>
             </div>
             <p class="compare-app-label" data-lang="ui-plan">Plan activo</p>
-            <p class="compare-app-value" data-lang="compare-app-plan">Viaje playa 2026</p>
-            <div class="compare-app-chart">
-              <svg viewBox="0 0 200 60" preserveAspectRatio="none"><path d="M0,50 L40,42 L80,35 L120,28 L160,18 L200,10" fill="none" stroke="url(#cmp-grad)" stroke-width="2.5"/><defs><linearGradient id="cmp-grad" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#ff033e"/><stop offset="1" stop-color="#ff6f91"/></linearGradient></defs></svg>
+            <p class="compare-app-value" data-lang="compare-app-plan">Fin de semana en la playa</p>
+            <div class="compare-plan-mock" aria-hidden="true">
+              <div class="compare-vote-list">
+                <div class="compare-vote-row">
+                  <span data-lang="compare-vote-a">15–20 jul</span>
+                  <div class="compare-vote-bar"><span style="width:88%"></span></div>
+                  <strong data-lang="compare-vote-a-n">7</strong>
+                </div>
+                <div class="compare-vote-row">
+                  <span data-lang="compare-vote-b">22–28 jul</span>
+                  <div class="compare-vote-bar"><span style="width:50%"></span></div>
+                  <strong data-lang="compare-vote-b-n">4</strong>
+                </div>
+                <div class="compare-vote-row">
+                  <span data-lang="compare-vote-c">Agosto</span>
+                  <div class="compare-vote-bar"><span style="width:18%"></span></div>
+                  <strong data-lang="compare-vote-c-n">1</strong>
+                </div>
+              </div>
+              <img src="./assets/monos/trips.png?v=20260722restore" alt="" class="compare-plan-mono" width="3840" height="3464" loading="lazy" decoding="async">
             </div>
             <div class="compare-app-scenarios">
-              <span class="tag tag-opt" data-lang="compare-tag-dates">15–20 jul · 7 votos</span>
+              <span class="tag tag-opt" data-lang="compare-tag-dates">Fecha ganadora · 15–20 jul</span>
               <span class="tag tag-base" data-lang="compare-tag-cost">€124/persona</span>
               <span class="tag tag-pes" data-lang="compare-tag-group">8 confirmados</span>
             </div>
@@ -513,12 +564,12 @@
         </div>
         <input type="range" class="compare-range" id="compare-range" min="8" max="92" value="50" aria-label="Comparar chat grupal y Planit" data-lang="compare-aria">
         <span class="compare-label compare-label--left" data-lang="compare-left">Chat grupal</span>
-        <span class="compare-label compare-label--right" aria-label="Planit"><img src="./assets/logo.png" alt="" class="ui-brand-logo ui-brand-logo--label" width="64" height="25" decoding="async"></span>
+        <span class="compare-label compare-label--right" data-lang="compare-right">Planit</span>
       </div>
     </div>
   </section>
 
-  <section id="showcase" class="showcase-section">
+  <section id="showcase" class="showcase-section band-brand">
     <div class="container">
       <div class="showcase-panel border-beam-wrap reveal">
         <div class="showcase-layout">
@@ -527,36 +578,41 @@
             <h2 class="showcase-title" data-lang="showcase-title">Preparando el lanzamiento</h2>
             <p class="showcase-desc" data-lang="showcase-desc">Planit llegará pronto a iOS y Android. La forma más fácil de organizar planes con amigos.</p>
             <ul class="showcase-perks">
-              <li data-lang="perk-1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Sin hojas de cálculo</li>
               <li data-lang="perk-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Sin mensajes perdidos</li>
               <li data-lang="perk-3"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Todo el grupo alineado</li>
             </ul>
           </div>
-          <div class="showcase-viz">
-            <div class="viz-header">
-              <span data-lang="viz-title">Viaje verano 2026</span>
-              <span class="viz-pill" data-lang="viz-pill">Confirmado</span>
-            </div>
-            <div class="scenario-viz" aria-hidden="true">
-              <div class="scenario-row">
-                <span class="tag-opt" data-lang="viz-tag-dates">Fechas</span>
-                <div class="scenario-bar"><span class="bar-opt-fill"></span></div>
-                <span data-lang="viz-horizon-val">15–20 jul</span>
+          <div class="showcase-status" aria-hidden="true">
+            <div class="launch-status">
+              <div class="launch-status-badge">
+                <span class="launch-status-dot"></span>
+                <span data-lang="showcase-status-badge">En marcha</span>
               </div>
-              <div class="scenario-row">
-                <span class="tag-base" data-lang="viz-tag-costs">Gastos</span>
-                <div class="scenario-bar"><span class="bar-base-fill"></span></div>
-                <span>€124/p</span>
+              <div class="launch-ring" role="presentation">
+                <svg class="launch-ring-svg" viewBox="0 0 120 120" width="160" height="160">
+                  <circle class="launch-ring-track" cx="60" cy="60" r="52" />
+                  <circle class="launch-ring-progress" cx="60" cy="60" r="52" />
+                </svg>
+                <div class="launch-ring-core">
+                  <svg class="launch-bolt" width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" fill="currentColor"/>
+                  </svg>
+                  <strong class="launch-ring-pct">74%</strong>
+                </div>
               </div>
-              <div class="scenario-row">
-                <span class="tag-pes" data-lang="viz-tag-group">Grupo</span>
-                <div class="scenario-bar"><span class="bar-pes-fill"></span></div>
-                <span data-lang="viz-growth-val">8 amigos</span>
+              <p class="launch-status-caption" data-lang="showcase-status-caption">Estamos en ello</p>
+              <div class="launch-platforms">
+                <div class="launch-platform">
+                  <span data-lang="showcase-ios">iOS</span>
+                  <div class="launch-bar"><span style="--p:82%"></span></div>
+                  <em>82%</em>
+                </div>
+                <div class="launch-platform">
+                  <span data-lang="showcase-android">Android</span>
+                  <div class="launch-bar"><span style="--p:68%"></span></div>
+                  <em>68%</em>
+                </div>
               </div>
-            </div>
-            <div class="viz-footer">
-              <div><span class="viz-label" data-lang="viz-growth">Participantes</span><strong data-lang="viz-growth-val">8 amigos</strong></div>
-              <div><span class="viz-label" data-lang="viz-horizon">Fechas</span><strong data-lang="viz-horizon-val">15–20 jul</strong></div>
             </div>
           </div>
         </div>
@@ -564,7 +620,7 @@
     </div>
   </section>
 
-  <section id="faq" class="faq-section">
+  <section id="faq" class="faq-section band-brand">
     <div class="container">
       <div class="section-heading reveal">
         <p class="section-label"><span data-lang="section-faq">Preguntas</span></p>
@@ -591,7 +647,7 @@
     </div>
   </section>
 
-  <section id="cta" class="cta-section">
+  <section id="cta" class="cta-section band-light">
     <div class="container">
       <div class="cta-card border-beam-wrap reveal">
         <div class="cta-layout">
@@ -637,7 +693,7 @@
   </section>
 </main>
 
-<footer class="site-footer">
+<footer class="site-footer band-light">
   <div class="container">
     <div class="footer-top">
       <nav class="footer-nav" aria-label="Legal">
@@ -690,6 +746,6 @@
   </div>
 </div>
 
-<script src="./site.js?v=20260721" defer></script>
+<script src="./site.js?v=20260722al" defer></script>
 </body>
 </html>

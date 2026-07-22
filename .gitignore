@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local image work / tools (not shipped with the site)
+assets/monos/_tools/
+assets/monos/_hq_work/
+assets/monos/imagenes/
+assets/video/
