@@ -14,7 +14,7 @@ The website is operated by <strong>Buildit Labs</strong> ("we", "us"), developer
 <p><strong>2. Service description</strong><br>
 Planit is a mobile app to organize plans with friends: trips, meetups and events. It includes invites (code, link or QR), date/place polls, activities, shared expenses, per-plan chat, an AI assistant (MIA), notifications and calendar export. This website provides information and a voluntary waitlist. We do <strong>not</strong> guarantee launch date, countries, early access or any specific benefit for waitlist members.</p>
 <br>
-<p><strong>2bis. App terms (when you create an account)</strong><br>
+<p><strong>2.1. App terms (when you create an account)</strong><br>
 By creating an account you also accept the in-app Terms: minimum age 16; lawful use; you are responsible for content in plans and chats; AI suggestions from MIA are advisory only; the service is provided "as is"; Spanish law applies, without prejudice to mandatory consumer rights.</p>
 <br>
 <p><strong>3. Waitlist</strong><br>
@@ -175,7 +175,7 @@ La web es operada por <strong>Buildit Labs</strong> ("nosotros"), desarrolladora
 <p><strong>2. Descripción del servicio</strong><br>
 Planit es una app para organizar planes con amigos: viajes, quedadas y eventos. Incluye invitaciones (código, enlace o QR), encuestas de fecha y lugar, actividades, gastos compartidos, chat por plan, asistente de IA (MIA), notificaciones y exportación al calendario. Esta web ofrece información y una lista de espera voluntaria. <strong>No</strong> garantizamos fecha de lanzamiento, países ni beneficios concretos para inscritos.</p>
 <br>
-<p><strong>2bis. Términos de la app (al crear una cuenta)</strong><br>
+<p><strong>2.1. Términos de la app (al crear una cuenta)</strong><br>
 Al crear una cuenta aceptas también los Términos de la app: edad mínima 16; uso lícito; eres responsable del contenido en planes y chats; las sugerencias de MIA son orientativas; el servicio se ofrece «tal cual»; se rige por la ley española, sin perjuicio de derechos imperativos del consumidor.</p>
 <br>
 <p><strong>3. Lista de espera</strong><br>
