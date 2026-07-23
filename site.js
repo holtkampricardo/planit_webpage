@@ -178,7 +178,7 @@ const translations = {
     'cta-perk-2': 'Sin spam: solo novedades del proyecto',
     'cta-perk-3': 'Puedes darte de baja cuando quieras',
     'cta-placeholder': 'tu@email.com',
-    'cta-button': 'Unirme',
+    'cta-button': 'Avísame',
     'terms-text':
       'Confirmo que tengo al menos 16 años y que he leído y acepto los <span class="modal-link" data-type="terms">Términos y Condiciones</span>, la <span class="modal-link" data-type="privacy">Política de Privacidad</span> y el <span class="modal-link" data-type="legal">Aviso Legal</span>.',
     'marketing-text':
@@ -371,7 +371,7 @@ const translations = {
     'cta-perk-2': 'No spam: Planit updates only',
     'cta-perk-3': 'Unsubscribe anytime',
     'cta-placeholder': 'you@email.com',
-    'cta-button': 'Join waitlist',
+    'cta-button': 'Notify me',
     'terms-text':
       'I confirm I am at least 16 years old and I have read and accept the <span class="modal-link" data-type="terms">Terms & Conditions</span>, the <span class="modal-link" data-type="privacy">Privacy Policy</span> and the <span class="modal-link" data-type="legal">Legal Notice</span>.',
     'marketing-text':
@@ -564,7 +564,7 @@ const translations = {
     'cta-perk-2': 'Sans spam : uniquement les actus Planit',
     'cta-perk-3': 'Désinscription à tout moment',
     'cta-placeholder': 'vous@email.com',
-    'cta-button': 'Rejoindre',
+    'cta-button': 'Prévenez-moi',
     'terms-text': 'Je confirme avoir au moins 16 ans et avoir lu et accepté les <span class="modal-link" data-type="terms">Conditions générales</span>, la <span class="modal-link" data-type="privacy">Politique de confidentialité</span> et les <span class="modal-link" data-type="legal">Mentions légales</span>.',
     'marketing-text': 'J’accepte de recevoir des e-mails promotionnels et des actus Planit (optionnel). Je peux me désinscrire à tout moment.',
     'privacy-policy': 'Votre e-mail sert uniquement à gérer la liste d’attente. Les envois passent par <a href="https://formspree.io" target="_blank" rel="noopener noreferrer" class="modal-link">Formspree</a>, notre prestataire de formulaires. Nous ne vendons pas vos données. Voir notre <span class="modal-link" data-type="privacy">Politique de confidentialité</span>.',
@@ -751,7 +751,7 @@ const translations = {
     'cta-perk-2': 'Kein Spam: nur Planit-News',
     'cta-perk-3': 'Jederzeit abmelden',
     'cta-placeholder': 'du@email.com',
-    'cta-button': 'Beitreten',
+    'cta-button': 'Benachrichtigen',
     'terms-text': 'Ich bestätige, dass ich mindestens 16 Jahre alt bin und die <span class="modal-link" data-type="terms">AGB</span>, die <span class="modal-link" data-type="privacy">Datenschutzrichtlinie</span> und den <span class="modal-link" data-type="legal">Rechtshinweis</span> gelesen und akzeptiert habe.',
     'marketing-text': 'Ich stimme zu, Werbe-E-Mails und Planit-Updates zu erhalten (optional). Abmeldung jederzeit möglich.',
     'privacy-policy': 'Deine E-Mail wird nur für die Warteliste genutzt. Übermittlungen laufen über <a href="https://formspree.io" target="_blank" rel="noopener noreferrer" class="modal-link">Formspree</a>. Wir verkaufen deine Daten nicht. Siehe unsere <span class="modal-link" data-type="privacy">Datenschutzrichtlinie</span>.',
@@ -938,7 +938,7 @@ const translations = {
     'cta-perk-2': 'Sem spam: só novidades do Planit',
     'cta-perk-3': 'Podes cancelar quando quiseres',
     'cta-placeholder': 'tu@email.com',
-    'cta-button': 'Juntar-me',
+    'cta-button': 'Avisem-me',
     'terms-text': 'Confirmo que tenho pelo menos 16 anos e que li e aceito os <span class="modal-link" data-type="terms">Termos e Condições</span>, a <span class="modal-link" data-type="privacy">Política de Privacidade</span> e o <span class="modal-link" data-type="legal">Aviso Legal</span>.',
     'marketing-text': 'Aceito receber emails promocionais e novidades do Planit (opcional). Posso cancelar a qualquer momento.',
     'privacy-policy': 'O teu email é usado só para gerir a lista de espera. Os envios são processados pela <a href="https://formspree.io" target="_blank" rel="noopener noreferrer" class="modal-link">Formspree</a>. Não vendemos os teus dados. Consulta a nossa <span class="modal-link" data-type="privacy">Política de Privacidade</span>.',
@@ -1125,7 +1125,7 @@ const translations = {
     'cta-perk-2': 'Niente spam: solo novità Planit',
     'cta-perk-3': 'Cancellati quando vuoi',
     'cta-placeholder': 'tu@email.com',
-    'cta-button': 'Iscriviti',
+    'cta-button': 'Avvisami',
     'terms-text': 'Confermo di avere almeno 16 anni e di aver letto e accettato i <span class="modal-link" data-type="terms">Termini e Condizioni</span>, l’<span class="modal-link" data-type="privacy">Informativa sulla privacy</span> e l’<span class="modal-link" data-type="legal">Avviso legale</span>.',
     'marketing-text': 'Accetto di ricevere email promozionali e novità su Planit (opzionale). Posso cancellarmi in qualsiasi momento.',
     'privacy-policy': 'La tua email è usata solo per gestire la lista d’attesa. Gli invii passano da <a href="https://formspree.io" target="_blank" rel="noopener noreferrer" class="modal-link">Formspree</a>. Non vendiamo i tuoi dati. Consulta la nostra <span class="modal-link" data-type="privacy">Informativa sulla privacy</span>.',

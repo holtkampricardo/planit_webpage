@@ -827,22 +827,29 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.45rem;
-  padding: 0.65rem 0.85rem;
+  gap: 0.5rem;
+  padding: 0.7rem 1rem;
   border-radius: 999px;
   border: 1px solid var(--border);
   background: var(--surface);
   box-shadow: 0 2px 8px var(--shadow);
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: var(--ink-soft);
 }
 
 .principle-icon {
-  color: var(--accent);
-  font-size: 0.45rem;
+  display: inline-block;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: transparent;
+  font-size: 0;
+  flex-shrink: 0;
 }
 
 /* ── Compare (Aceternity-style) ── */
@@ -1122,61 +1129,120 @@ body::before {
 }
 
 @media (max-width: 560px) {
+  .compare-section {
+    padding: 3rem 0.75rem;
+  }
+
   .compare-wrap {
-    height: min(540px, 82svh);
+    height: 360px;
+    border-radius: 1rem;
   }
 
   .compare-app-ui {
-    padding: 1rem 0.75rem 1.1rem;
-    gap: 0.35rem;
+    padding: 2rem 0.6rem 0.75rem;
+    gap: 0.28rem;
   }
 
-  .compare-app-value {
-    font-size: 1.05rem;
+  .compare-app-header {
+    font-size: 0.68rem;
+  }
+
+  .compare-app-header .ui-brand-logo--lg {
+    height: 0.95rem;
+    max-width: 4.2rem;
+  }
+
+  .compare-app-header .viz-pill {
+    padding: 0.14rem 0.4rem;
+    font-size: 0.56rem;
   }
 
   .compare-app-label {
-    margin-top: 0.1rem;
+    margin-top: 0;
+    font-size: 0.56rem;
+    letter-spacing: 0.06em;
+  }
+
+  .compare-app-value {
+    font-size: 0.92rem;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  .compare-plan-mock {
+    margin: 0.05rem 0;
+    padding: 0.45rem 0.5rem;
+    border-radius: 0.55rem;
+    gap: 0.3rem;
+  }
+
+  .compare-vote-list {
+    gap: 0.32rem;
   }
 
   .compare-vote-row {
-    grid-template-columns: 3.2rem minmax(0, 1fr) 1rem;
-    gap: 0.3rem;
-    font-size: 0.64rem;
+    grid-template-columns: 3rem minmax(0, 1fr) 0.95rem;
+    gap: 0.25rem;
+    font-size: 0.62rem;
+  }
+
+  .compare-vote-row strong {
+    font-size: 0.62rem;
+  }
+
+  .compare-vote-bar {
+    height: 0.32rem;
   }
 
   .compare-app-scenarios {
-    gap: 0.3rem;
+    gap: 0.25rem;
+    margin-top: 0.2rem;
   }
 
   .compare-app-scenarios .tag {
-    font-size: 0.6rem;
-    padding: 0.25rem 0.45rem;
+    font-size: 0.55rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.35rem;
+    letter-spacing: 0;
+  }
+
+  .compare-app-scenarios .tag:last-child {
+    display: none;
   }
 
   .chat-mock {
-    padding: 0.9rem 0.7rem;
-    gap: 0.35rem;
-    font-size: 0.7rem;
+    padding: 2rem 0.55rem 0.65rem;
+    gap: 0.28rem;
+    font-size: 0.66rem;
+    line-height: 1.35;
+  }
+
+  .chat-mock-header {
+    font-size: 0.55rem;
+    margin-bottom: 0.15rem;
+    letter-spacing: 0.04em;
   }
 
   .chat-msg {
-    padding: 0.4rem 0.55rem;
+    padding: 0.32rem 0.45rem;
+    border-radius: 0.45rem;
     max-width: 100%;
   }
 
-  .compare-label {
-    top: 0.55rem;
-    font-size: 0.6rem;
-    padding: 0.25rem 0.5rem;
+  .chat-msg--other:nth-of-type(4),
+  .chat-msg--lost,
+  .chat-msg--warn {
+    display: none;
   }
 
-  .compare-label--left { left: 0.55rem; }
-  .compare-label--right { right: 0.55rem; }
-
   .compare-handle-knob {
-    width: 2.15rem;
-    height: 2.15rem;
+    width: 1.85rem;
+    height: 1.85rem;
+  }
+
+  .compare-handle-knob svg {
+    width: 12px;
+    height: 12px;
   }
 }
 
@@ -1184,12 +1250,35 @@ body::before {
 @media (max-width: 900px) {
   .compare-plan-mock {
     grid-template-columns: minmax(0, 1fr);
-    gap: 0.45rem;
-    padding: 0.55rem 0.65rem;
   }
 
   .compare-plan-mono {
     display: none !important;
+  }
+}
+
+@media (min-width: 561px) and (max-width: 900px) {
+  .compare-wrap {
+    height: 380px;
+  }
+
+  .compare-app-ui {
+    padding: 1rem 0.85rem;
+    gap: 0.35rem;
+  }
+
+  .compare-app-value {
+    font-size: 1.05rem;
+  }
+
+  .chat-mock {
+    padding: 0.9rem 0.75rem;
+    gap: 0.35rem;
+    font-size: 0.68rem;
+  }
+
+  .compare-plan-mock {
+    padding: 0.55rem 0.65rem;
   }
 }
 
@@ -1292,23 +1381,45 @@ body::before {
 
 .compare-label {
   position: absolute;
-  bottom: 1rem;
+  top: 0.85rem;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  height: auto;
+  width: auto;
+  max-height: none;
   z-index: 3;
   pointer-events: none;
   padding: 0.3rem 0.65rem;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.35);
   background: rgba(17, 24, 39, 0.75);
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
   color: #ffffff;
   box-shadow: 0 4px 12px var(--shadow);
+  white-space: nowrap;
+  line-height: 1.2;
 }
 
-.compare-label--left { left: 1rem; }
-.compare-label--right { right: 1rem; }
+.compare-label--left { left: 0.85rem; }
+.compare-label--right { right: 0.85rem; }
+
+@media (max-width: 560px) {
+  .compare-label {
+    top: 0.5rem;
+    bottom: auto !important;
+    height: auto !important;
+    font-size: 0.6rem;
+    padding: 0.2rem 0.45rem;
+  }
+
+  .compare-label--left { left: 0.5rem; }
+  .compare-label--right { right: 0.5rem; }
+}
 
 /* ── FAQ ── */
 
@@ -1413,18 +1524,22 @@ body::before {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-transform: none;
   color: var(--muted);
   white-space: nowrap;
 }
 
 .marquee-item::before {
-  content: '◆';
-  font-size: 0.45rem;
-  color: var(--accent);
+  content: '';
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
 }
 
 /* ── Stats ── */
@@ -2863,7 +2978,7 @@ button.modal-link {
   max-height: 90vh;
   padding: 1.5rem;
   border-radius: var(--radius-xl);
-  border: 1px solid rgba(17, 24, 39, 0.08);
+  border: 1px solid rgba(17, 24, 39, 0.1);
   background: #ffffff;
   color: #111827;
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
@@ -2874,7 +2989,7 @@ button.modal-link {
 }
 
 #modal-content {
-  color: #4b5563;
+  color: #374151;
 }
 
 #modal-content strong {
@@ -2894,12 +3009,12 @@ button.modal-link {
   background: none;
   font-size: 1.5rem;
   line-height: 1;
-  color: var(--muted);
+  color: #6b7280;
   cursor: pointer;
 }
 
 #modal-close:hover {
-  color: var(--ink);
+  color: #111827;
 }
 
 #cookie-banner {
@@ -3065,7 +3180,7 @@ button.modal-link {
 }
 
 .legal-header .legal-back {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .legal-header .legal-back:hover {
@@ -3083,21 +3198,25 @@ button.modal-link {
 .legal-back {
   font-size: 0.84rem;
   font-weight: 600;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.9);
   transition: color 0.2s;
 }
 
 .legal-back:hover {
-  color: var(--ink);
+  color: #ffffff;
 }
 
 .legal-page {
   padding: 2.5rem 1rem 3rem;
+  background: #ffffff;
+  color: #111827;
+  min-height: 70vh;
 }
 
 .legal-wrap {
   max-width: 42rem;
   margin-inline: auto;
+  color: #111827;
 }
 
 .legal-wrap h1 {
@@ -3106,6 +3225,7 @@ button.modal-link {
   font-weight: 700;
   letter-spacing: -0.03em;
   margin-bottom: 0.5rem;
+  color: #111827;
 }
 
 .legal-wrap h2 {
@@ -3114,14 +3234,18 @@ button.modal-link {
   font-weight: 600;
   margin-top: 2rem;
   margin-bottom: 0.65rem;
-  color: var(--accent-soft);
+  color: #ff033e;
 }
 
 .legal-wrap p,
 .legal-wrap li {
-  color: var(--muted);
+  color: #374151;
   font-size: 0.92rem;
   line-height: 1.65;
+}
+
+.legal-wrap strong {
+  color: #111827;
 }
 
 .legal-wrap ul {
@@ -3130,37 +3254,62 @@ button.modal-link {
 }
 
 .legal-wrap a {
-  color: var(--accent-soft);
+  color: #ff033e;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .legal-wrap a:hover {
-  color: var(--ink);
+  color: #e50338;
 }
 
 .legal-meta {
   font-size: 0.82rem;
-  color: var(--muted);
+  color: #6b7280;
   margin-bottom: 1.5rem;
 }
 
 .legal-callout {
   padding: 1rem 1.1rem;
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(180, 83, 9, 0.25);
-  background: rgba(180, 83, 9, 0.08);
+  border: 1px solid rgba(180, 83, 9, 0.28);
+  background: #fff7ed;
   margin: 1.5rem 0;
 }
 
 .legal-callout p {
   margin: 0;
-  color: #92400e;
+  color: #9a3412;
   font-size: 0.9rem;
+}
+
+.legal-callout strong {
+  color: #7c2d12;
 }
 
 .legal-footnote {
   margin-top: 3rem;
   font-size: 0.82rem;
-  color: var(--muted);
+  color: #6b7280;
+}
+
+/* Legal pages: keep footer readable on white */
+body:has(.legal-page) {
+  background: #ffffff;
+  color: #111827;
+}
+
+body:has(.legal-page) .site-footer {
+  background: #111827;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+body:has(.legal-page) .site-footer a {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+body:has(.legal-page) .site-footer a:hover {
+  color: #ffffff;
 }
 
 /* Below-fold sections: skip layout/paint until near viewport */
@@ -3434,12 +3583,18 @@ button.modal-link {
 }
 
 .legal-callout {
-  border-color: rgba(180, 83, 9, 0.25) !important;
-  background: rgba(180, 83, 9, 0.08) !important;
+  border-color: rgba(180, 83, 9, 0.28) !important;
+  background: #fff7ed !important;
 }
 
 .legal-callout p {
-  color: #92400e !important;
+  color: #9a3412 !important;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .legal-header {
+    background: #ff033e !important;
+  }
 }
 
 .footer-brand img {
@@ -3454,8 +3609,7 @@ button.modal-link {
 
 @media (hover: none), (pointer: coarse) {
   .header-shell,
-  .mobile-nav,
-  .legal-header {
+  .mobile-nav {
     background: rgba(255, 255, 255, 0.18) !important;
   }
 
@@ -3711,11 +3865,11 @@ button.modal-link {
 }
 
 .band-brand .marquee-item {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .band-brand .marquee-item::before {
-  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.75);
 }
 
 .band-soft.marquee-section {
@@ -3723,11 +3877,11 @@ button.modal-link {
 }
 
 .band-soft .marquee-item {
-  color: #6b7280;
+  color: #374151;
 }
 
 .band-soft .marquee-item::before {
-  color: #ff033e;
+  background: #ff033e;
 }
 
 .band-soft .section-heading h2,
