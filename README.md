@@ -7,7 +7,7 @@ Static landing page for [Planit](https://www.getplanit.app/), a social planning 
 - Responsive design with custom CSS (no build step)
 - Waitlist form via [Formspree](https://formspree.io)
 - Spanish / English language switcher
-- Legal pages (privacy, terms) and in-page modals
+- Legal content via in-page modals (`legal.js`, EN/ES with English fallback)
 - SEO: structured data, sitemap, Open Graph (`assets/og-image.jpg`)
 
 ## Project structure
@@ -18,7 +18,6 @@ Static landing page for [Planit](https://www.getplanit.app/), a social planning 
 | `index.css` | Styles |
 | `site.js` | i18n, form, interactions |
 | `legal.js` | Legal modal content (EN/ES) |
-| `privacidad.html` / `terminos.html` | Standalone legal pages |
 | `manifest.json` | Web app manifest |
 | `sitemap.xml` | Search engine sitemap |
 | `assets/og-image.jpg` | Open Graph / Twitter preview (1200×800) |

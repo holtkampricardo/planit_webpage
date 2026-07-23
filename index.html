@@ -55,7 +55,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Manrope:wght@400;700&family=Syne:wght@700&display=optional" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Manrope:wght@400;700&family=Syne:wght@700&display=optional"></noscript>
-  <link rel="stylesheet" href="./index.css?v=20260723sync">
+  <link rel="stylesheet" href="./index.css?v=20260723imgsoft1">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -162,7 +162,7 @@
       <a href="#process" data-lang="nav-process">Cómo funciona</a>
       <a href="#compare" data-lang="nav-compare">Por qué</a>
       <a href="#faq" data-lang="nav-faq">FAQ</a>
-      <a href="./privacidad.html" data-lang="nav-privacy">Privacidad</a>
+      <button type="button" class="modal-link nav-legal-link" data-type="privacy" data-lang="nav-privacy">Privacidad</button>
     </nav>
     <div class="header-actions">
       <a href="#cta" class="btn-primary btn-sm" data-lang="notify-me">Avísame</a>
@@ -175,7 +175,7 @@
       <a href="#process" data-lang="nav-process">Cómo funciona</a>
       <a href="#compare" data-lang="nav-compare">Por qué</a>
       <a href="#faq" data-lang="nav-faq">FAQ</a>
-      <a href="./privacidad.html" data-lang="nav-privacy">Privacidad</a>
+      <button type="button" class="modal-link nav-legal-link" data-type="privacy" data-lang="nav-privacy">Privacidad</button>
       <a href="#cta" data-lang="notify-me">Avísame</a>
     </nav>
   </div>
@@ -701,9 +701,9 @@
   <div class="container">
     <div class="footer-top">
       <nav class="footer-nav" aria-label="Legal">
-        <a href="./terminos.html" data-lang="footer-terms">Términos</a>
+        <button type="button" class="modal-link" data-type="terms" data-lang="footer-terms">Términos</button>
         <span class="sep" aria-hidden="true">·</span>
-        <a href="./privacidad.html" data-lang="footer-privacy">Privacidad</a>
+        <button type="button" class="modal-link" data-type="privacy" data-lang="footer-privacy">Privacidad</button>
         <span class="sep" aria-hidden="true">·</span>
         <button type="button" class="modal-link" data-type="legal" data-lang="footer-legal">Aviso Legal</button>
         <span class="sep" aria-hidden="true">·</span>
@@ -754,6 +754,6 @@
   </div>
 </div>
 
-<script src="./site.js?v=20260723sync" defer></script>
+<script src="./site.js?v=20260723imgsoft1" defer></script>
 </body>
 </html>

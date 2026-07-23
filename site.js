@@ -1463,6 +1463,30 @@ function initSpotlightCards() {
   });
 }
 
+function initMonoImageReady() {
+  const imgs = document.querySelectorAll(
+    '.mono-illust, .hero-mascot-anim, .hero-mascot-img, .compare-plan-mono, .showcase-mascot img'
+  );
+
+  const markReady = async (img) => {
+    try {
+      if (typeof img.decode === 'function') await img.decode();
+    } catch {
+      /* broken/corrupt image — still reveal */
+    }
+    img.classList.add('is-ready');
+  };
+
+  imgs.forEach((img) => {
+    if (img.complete && img.naturalWidth > 0) {
+      markReady(img);
+      return;
+    }
+    img.addEventListener('load', () => markReady(img), { once: true });
+    img.addEventListener('error', () => img.classList.add('is-ready'), { once: true });
+  });
+}
+
 function initScrollReveal() {
   const items = document.querySelectorAll('.reveal');
   if (!items.length) return;
@@ -1759,6 +1783,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   setLanguage(currentLang);
+  initMonoImageReady();
   initScrollEffects();
   initMobileNav();
   initCookieBanner();
