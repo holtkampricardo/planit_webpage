@@ -1,18 +1,21 @@
-/* Legal texts — Planit waitlist (EN/ES). Version: 2026-06 */
+/* Legal texts — Planit waitlist + app (EN/ES). Version: 2026-07-23 */
 const LEGAL_TEXTS = {
   en: {
     terms: {
       title: "Terms & Conditions",
       content: `
-<p><strong>Version:</strong> June 2026 · <strong>Website:</strong> <a href="https://www.getplanit.app/">getplanit.app</a></p>
+<p><strong>Version:</strong> July 2026 (2026-07-23) · <strong>Website:</strong> <a href="https://www.getplanit.app/">getplanit.app</a></p>
 <br>
 <p>These Terms & Conditions ("Terms") govern your access to the Planit website and waitlist. By using the site or submitting the form, you agree to these Terms, our Privacy Policy, and Legal Notice.</p>
 <br>
 <p><strong>1. Operator</strong><br>
-The website is operated by <strong>Buildit Labs</strong> ("we", "us"), developer of the Planit app. Contact: <a href="mailto:aplicacionplanit@gmail.com">aplicacionplanit@gmail.com</a>.</p>
+The website is operated by <strong>Buildit Labs</strong> ("we", "us"), developer of the Planit app. Contact: <a href="mailto:hello@getplanit.app">hello@getplanit.app</a>.</p>
 <br>
 <p><strong>2. Service description</strong><br>
-Planit is a mobile application project in development. This website provides information and a voluntary waitlist. We do <strong>not</strong> guarantee that the app will launch, on which date, in which countries, or that waitlist members will receive early access, benefits, or any specific feature.</p>
+Planit is a mobile app to organize plans with friends: trips, meetups and events. It includes invites (code, link or QR), date/place polls, activities, shared expenses, per-plan chat, an AI assistant (MIA), notifications and calendar export. This website provides information and a voluntary waitlist. We do <strong>not</strong> guarantee launch date, countries, early access or any specific benefit for waitlist members.</p>
+<br>
+<p><strong>2bis. App terms (when you create an account)</strong><br>
+By creating an account you also accept the in-app Terms: minimum age 16; lawful use; you are responsible for content in plans and chats; AI suggestions from MIA are advisory only; the service is provided "as is"; Spanish law applies, without prejudice to mandatory consumer rights.</p>
 <br>
 <p><strong>3. Waitlist</strong><br>
 To join the waitlist you must: (a) be at least 16 years old; (b) provide a valid email; (c) accept these Terms and the Privacy Policy. Marketing emails require separate optional consent. Submissions are processed by <strong>Formspree</strong> (<a href="https://formspree.io" target="_blank" rel="noopener noreferrer">formspree.io</a>) as our technical provider.</p>
@@ -51,14 +54,14 @@ If any provision is invalid, the remainder remains in effect.</p>
 These Terms are governed by the laws of <strong>Spain</strong>, without prejudice to mandatory consumer rights in your country of residence. For disputes, the courts of Spain shall have jurisdiction unless mandatory law requires otherwise.</p>
 <br>
 <p><strong>15. Contact</strong><br>
-<a href="mailto:aplicacionplanit@gmail.com">aplicacionplanit@gmail.com</a></p>
+<a href="mailto:hello@getplanit.app">hello@getplanit.app</a></p>
 `
     },
     privacy: {
       title: "Privacy Policy",
       content: `
-<p><strong>Data controller:</strong> Buildit Labs · <a href="mailto:aplicacionplanit@gmail.com">aplicacionplanit@gmail.com</a><br>
-<strong>Version:</strong> June 2026 · <strong>Website:</strong> <a href="https://www.getplanit.app/">getplanit.app</a></p>
+<p><strong>Data controller:</strong> Buildit Labs · <a href="mailto:hello@getplanit.app">hello@getplanit.app</a><br>
+<strong>Version:</strong> July 2026 (2026-07-23) · <strong>Website:</strong> <a href="https://www.getplanit.app/">getplanit.app</a></p>
 <br>
 <p>This Privacy Policy describes how we process personal data when you visit our site and join the waitlist, in accordance with Regulation (EU) 2016/679 (GDPR) and applicable Spanish data protection law (LOPDGDD).</p>
 <br>
@@ -88,7 +91,7 @@ We do not sell or rent your data. Recipients may include: hosting/CDN providers,
 We use HTTPS and rely on reputable providers. No method of transmission over the Internet is 100% secure; we cannot guarantee absolute security.</p>
 <br>
 <p><strong>7. Your rights</strong><br>
-You may request: access, rectification, erasure, restriction, portability, and withdrawal of consent. Contact: <a href="mailto:aplicacionplanit@gmail.com?subject=Data%20protection%20request">aplicacionplanit@gmail.com</a> (subject: "Data protection request"). We will respond within one month where required by law.<br>
+You may request: access, rectification, erasure, restriction, portability, and withdrawal of consent. Contact: <a href="mailto:hello@getplanit.app?subject=Data%20protection%20request">hello@getplanit.app</a> (subject: "Data protection request"). We will respond within one month where required by law.<br>
 You may lodge a complaint with the Spanish Data Protection Agency (AEPD): <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">www.aepd.es</a>.</p>
 <br>
 <p><strong>8. Marketing</strong><br>
@@ -100,8 +103,11 @@ The waitlist is not directed at anyone under 16. We do not knowingly collect dat
 <p><strong>10. Automated decisions</strong><br>
 We do not use profiling or automated decisions with legal or similarly significant effects.</p>
 <br>
-<p><strong>11. Changes</strong><br>
-We may update this policy. The current version is always available on this website.</p>
+<p><strong>11. Mobile app data (Planit)</strong><br>
+When you use the Planit app we may process: account data (name, email, optional avatar, sign-in provider); plan content (dates, places, participants, polls, activities, expenses); plan chat messages; AI assistant (MIA) prompts/responses with your consent; push tokens if enabled; and terms acceptance version. Processors may include Google Firebase, Google Gemini, OpenStreetMap/Nominatim (and Google Maps if configured), Expo/EAS, and Apple/Google for sign-in. You can export or delete your account from Profile in the app. Details match the in-app Privacy Policy.</p>
+<br>
+<p><strong>12. Changes</strong><br>
+We may update this policy. The current version is always available on this website and in the app.</p>
 `
     },
     legal: {
@@ -111,7 +117,7 @@ We may update this policy. The current version is always available on this websi
 <br>
 <p><strong>Website owner:</strong> Buildit Labs<br>
 <strong>Website:</strong> <a href="https://www.getplanit.app/">https://www.getplanit.app</a><br>
-<strong>Contact email:</strong> <a href="mailto:aplicacionplanit@gmail.com">aplicacionplanit@gmail.com</a><br>
+<strong>Contact email:</strong> <a href="mailto:hello@getplanit.app">hello@getplanit.app</a><br>
 <strong>Activity:</strong> Promotion of the Planit social planning app (in development) and management of a waitlist.</p>
 <br>
 <p><strong>Purpose of the website</strong><br>
@@ -133,7 +139,7 @@ Processing of personal data is described in our <span class="modal-link" data-ty
     cookies: {
       title: "Cookie Policy",
       content: `
-<p><strong>Version:</strong> June 2026</p>
+<p><strong>Version:</strong> July 2026 (2026-07-23)</p>
 <br>
 <p>This site uses cookies and similar technologies as described below.</p>
 <br>
@@ -151,7 +157,7 @@ These providers may process technical data (IP, device info). See their respecti
 You can accept or reject non-essential processing via the cookie banner. Rejecting does not block access to the site, but some preferences may not be saved. You can delete localStorage via your browser settings.</p>
 <br>
 <p><strong>4. More information</strong><br>
-See our <span class="modal-link" data-type="privacy">Privacy Policy</span> or contact <a href="mailto:aplicacionplanit@gmail.com">aplicacionplanit@gmail.com</a>.</p>
+See our <span class="modal-link" data-type="privacy">Privacy Policy</span> or contact <a href="mailto:hello@getplanit.app">hello@getplanit.app</a>.</p>
 `
     }
   },
@@ -159,15 +165,18 @@ See our <span class="modal-link" data-type="privacy">Privacy Policy</span> or co
     terms: {
       title: "Términos y Condiciones",
       content: `
-<p><strong>Versión:</strong> junio 2026 · <strong>Web:</strong> <a href="https://www.getplanit.app/">getplanit.app</a></p>
+<p><strong>Versión:</strong> julio 2026 (2026-07-23) · <strong>Web:</strong> <a href="https://www.getplanit.app/">getplanit.app</a></p>
 <br>
 <p>Estos Términos y Condiciones ("Términos") regulan el acceso a la web de Planit y a la lista de espera. Al usar el sitio o enviar el formulario, aceptas estos Términos, nuestra Política de Privacidad y el Aviso Legal.</p>
 <br>
 <p><strong>1. Titular</strong><br>
-La web es operada por <strong>Buildit Labs</strong> ("nosotros"), desarrolladora de la app Planit. Contacto: <a href="mailto:aplicacionplanit@gmail.com">aplicacionplanit@gmail.com</a>.</p>
+La web es operada por <strong>Buildit Labs</strong> ("nosotros"), desarrolladora de la app Planit. Contacto: <a href="mailto:hello@getplanit.app">hello@getplanit.app</a>.</p>
 <br>
 <p><strong>2. Descripción del servicio</strong><br>
-Planit es un proyecto de aplicación móvil en desarrollo. Esta web ofrece información y una lista de espera voluntaria. <strong>No</strong> garantizamos que la app se publique, en qué fecha, en qué países, ni que los inscritos reciban acceso anticipado, beneficios o funciones concretas.</p>
+Planit es una app para organizar planes con amigos: viajes, quedadas y eventos. Incluye invitaciones (código, enlace o QR), encuestas de fecha y lugar, actividades, gastos compartidos, chat por plan, asistente de IA (MIA), notificaciones y exportación al calendario. Esta web ofrece información y una lista de espera voluntaria. <strong>No</strong> garantizamos fecha de lanzamiento, países ni beneficios concretos para inscritos.</p>
+<br>
+<p><strong>2bis. Términos de la app (al crear una cuenta)</strong><br>
+Al crear una cuenta aceptas también los Términos de la app: edad mínima 16; uso lícito; eres responsable del contenido en planes y chats; las sugerencias de MIA son orientativas; el servicio se ofrece «tal cual»; se rige por la ley española, sin perjuicio de derechos imperativos del consumidor.</p>
 <br>
 <p><strong>3. Lista de espera</strong><br>
 Para apuntarte debes: (a) tener al menos 16 años; (b) facilitar un email válido; (c) aceptar estos Términos y la Política de Privacidad. Los emails promocionales requieren consentimiento opcional aparte. Los envíos se procesan con <strong>Formspree</strong> (<a href="https://formspree.io" target="_blank" rel="noopener noreferrer">formspree.io</a>) como proveedor técnico.</p>
@@ -206,14 +215,14 @@ Si alguna cláusula fuera inválida, el resto permanecerá vigente.</p>
 Estos Términos se rigen por la ley de <strong>España</strong>, sin perjuicio de derechos imperativos del consumidor en tu país. Para controversias, serán competentes los tribunales españoles salvo norma imperativa en contrario.</p>
 <br>
 <p><strong>15. Contacto</strong><br>
-<a href="mailto:aplicacionplanit@gmail.com">aplicacionplanit@gmail.com</a></p>
+<a href="mailto:hello@getplanit.app">hello@getplanit.app</a></p>
 `
     },
     privacy: {
       title: "Política de Privacidad",
       content: `
-<p><strong>Responsable:</strong> Buildit Labs · <a href="mailto:aplicacionplanit@gmail.com">aplicacionplanit@gmail.com</a><br>
-<strong>Versión:</strong> junio 2026 · <strong>Web:</strong> <a href="https://www.getplanit.app/">getplanit.app</a></p>
+<p><strong>Responsable:</strong> Buildit Labs · <a href="mailto:hello@getplanit.app">hello@getplanit.app</a><br>
+<strong>Versión:</strong> julio 2026 (2026-07-23) · <strong>Web:</strong> <a href="https://www.getplanit.app/">getplanit.app</a></p>
 <br>
 <p>Esta Política de Privacidad describe cómo tratamos datos personales cuando visitas nuestro sitio y te apuntas a la lista de espera, conforme al Reglamento (UE) 2016/679 (RGPD) y la LOPDGDD.</p>
 <br>
@@ -243,7 +252,7 @@ No vendemos ni alquilamos tus datos. Destinatarios posibles: alojamiento/CDN, he
 Usamos HTTPS y proveedores reconocidos. Ninguna transmisión por Internet es 100 % segura; no podemos garantizar seguridad absoluta.</p>
 <br>
 <p><strong>7. Tus derechos</strong><br>
-Puedes solicitar acceso, rectificación, supresión, limitación, portabilidad y retirar el consentimiento en <a href="mailto:aplicacionplanit@gmail.com?subject=Solicitud%20protecci%C3%B3n%20de%20datos">aplicacionplanit@gmail.com</a> (asunto: "Solicitud protección de datos"). Responderemos en el plazo legal (normalmente un mes).<br>
+Puedes solicitar acceso, rectificación, supresión, limitación, portabilidad y retirar el consentimiento en <a href="mailto:hello@getplanit.app?subject=Solicitud%20protecci%C3%B3n%20de%20datos">hello@getplanit.app</a> (asunto: "Solicitud protección de datos"). Responderemos en el plazo legal (normalmente un mes).<br>
 Puedes reclamar ante la <strong>AEPD</strong>: <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">www.aepd.es</a>.</p>
 <br>
 <p><strong>8. Marketing</strong><br>
@@ -255,8 +264,11 @@ La lista no está dirigida a menores de 16 años. No recopilamos datos de menore
 <p><strong>10. Decisiones automatizadas</strong><br>
 No realizamos perfilado ni decisiones automatizadas con efectos jurídicos significativos.</p>
 <br>
-<p><strong>11. Cambios</strong><br>
-Podemos actualizar esta política. La versión vigente estará siempre en esta web.</p>
+<p><strong>11. Datos de la app móvil (Planit)</strong><br>
+Al usar la app podemos tratar: cuenta (nombre, email, avatar opcional, proveedor de acceso); contenido de planes (fechas, lugares, participantes, encuestas, actividades, gastos); mensajes de chat del plan; prompts/respuestas del asistente IA (MIA) con tu consentimiento; tokens push si los activas; y versión de aceptación de términos. Encargados posibles: Google Firebase, Google Gemini, OpenStreetMap/Nominatim (y Google Maps si se configura), Expo/EAS y Apple/Google para inicio de sesión. Puedes exportar o eliminar tu cuenta desde Perfil. El detalle coincide con la Política de Privacidad de la app.</p>
+<br>
+<p><strong>12. Cambios</strong><br>
+Podemos actualizar esta política. La versión vigente estará siempre en esta web y en la app.</p>
 `
     },
     legal: {
@@ -266,7 +278,7 @@ Podemos actualizar esta política. La versión vigente estará siempre en esta w
 <br>
 <p><strong>Titular de la web:</strong> Buildit Labs<br>
 <strong>Sitio web:</strong> <a href="https://www.getplanit.app/">https://www.getplanit.app</a><br>
-<strong>Email de contacto:</strong> <a href="mailto:aplicacionplanit@gmail.com">aplicacionplanit@gmail.com</a><br>
+<strong>Email de contacto:</strong> <a href="mailto:hello@getplanit.app">hello@getplanit.app</a><br>
 <strong>Actividad:</strong> Promoción de la app de planificación social Planit (en desarrollo) y gestión de lista de espera.</p>
 <br>
 <p><strong>Objeto del sitio</strong><br>
@@ -288,7 +300,7 @@ El tratamiento de datos se describe en nuestra <span class="modal-link" data-typ
     cookies: {
       title: "Política de Cookies",
       content: `
-<p><strong>Versión:</strong> junio 2026</p>
+<p><strong>Versión:</strong> julio 2026 (2026-07-23)</p>
 <br>
 <p>Este sitio utiliza cookies y tecnologías similares según se describe a continuación.</p>
 <br>
@@ -306,7 +318,7 @@ Estos proveedores pueden tratar datos técnicos (IP, dispositivo). Consulta sus 
 Puedes aceptar o rechazar lo no esencial en el banner de cookies. Rechazar no bloquea el acceso al sitio. Puedes borrar el localStorage desde tu navegador.</p>
 <br>
 <p><strong>4. Más información</strong><br>
-Consulta nuestra <span class="modal-link" data-type="privacy">Política de Privacidad</span> o escribe a <a href="mailto:aplicacionplanit@gmail.com">aplicacionplanit@gmail.com</a>.</p>
+Consulta nuestra <span class="modal-link" data-type="privacy">Política de Privacidad</span> o escribe a <a href="mailto:hello@getplanit.app">hello@getplanit.app</a>.</p>
 `
     }
   }
